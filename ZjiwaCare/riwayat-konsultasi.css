@@ -1,0 +1,103 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #8b2e2e;
+    font-size: 32px;
+}
+
+h4 {
+    color: #8b2e2e;
+    font-size: 32px;
+}
+
+.teks-konsul{
+    position:relative;
+    top: 25px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.mb-4{
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    padding: 10px 0;
+}
+
+/* Navbar Box Styling */
+.navbar .nav-link.box-nav {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px; /* Rounded corners */
+    color: #CC5E39; /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-link.box-nav:hover {
+    background-color: #13795d; /* Change background on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.navbar .btn-primary.box-login {
+    border: 2px solid #13795d; /* Border for login button */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #13795d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn-primary.box-login:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #13795d; /* Text color changes */
+    border-color: #13795d; /* Keep border color */
+}
+
+/* Card styling */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body h5 {
+    color: #8b2e2e;
+}
+
+.card-body p {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.badge.bg-danger {
+    background-color: #e74c3c;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f8f9fa;
+}
+
+footer h6 {
+    color: #8b2e2e;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #8b2e2e;
+}

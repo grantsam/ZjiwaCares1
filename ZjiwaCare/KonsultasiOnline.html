@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KonsulOnline</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Konsultasi Online</h1>
+        <div class="psychologist">
+            <img src="psikolog1.jpg" alt="Psikolog 1">
+            <div class="psychologist-info">
+                <h3>Dr. Andi Setiawan</h3>
+                <p class="price">Rp 240.000</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date">Pilih Tanggal:</label>
+            <input type="date" id="date">
+        </div>
+        <div class="form-group">
+            <label for="time">Pilih Waktu:</label>
+            <select id="time">
+                <option value="10:00">10:00</option>
+                <option value="14:00">14:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+        <button class="button" onclick="bookConsultation()">Booking Sekarang</button>
+        <div class="payment-section" id="paymentSection">
+            <h2>Pembayaran</h2>
+            <p>Total Harga: <span id="totalPrice"></span></p>
+            <p>Kode Pembayaran: <span id="paymentCode"></span></p>
+            <h3>Pilih Metode Pembayaran:</h3>
+            <div class="payment-method">
+                <input type="radio" id="bank" name="payment" value="Bank Transfer">
+                <label for="bank">Bank Transfer</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" id="credit" name="payment" value="Kartu Kredit">
+                <label for="credit">Kartu Kredit</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" id="gopay" name="payment" value="Gopay">
+                <label for="gopay">Gopay</label>
+            </div>
+            <button class="button" onclick="confirmPayment()">Konfirmasi Pembayaran</button>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            Booking berhasil! Terima kasih telah menggunakan ZjiwaCare.
+        </div>
+    </div>
+
+    <script>
+        function bookConsultation() {
+            var date = document.getElementById('date').value;
+            var time = document.getElementById('time').value;
+            if (date && time) {
+                // Tampilkan bagian pembayaran
+                document.getElementById('paymentSection').style.display = 'block';
+                document.getElementById('totalPrice').innerText = 'Rp 240.000';
+                document.getElementById('paymentCode').innerText = 'ZJW123456789';
+                // Scroll ke bagian pembayaran
+                document.getElementById('paymentSection').scrollIntoView();
+            } else {
+                alert("Harap pilih tanggal dan waktu untuk booking.");
+            }
+        }
+        function confirmPayment() {
+            var paymentMethods = document.getElementsByName('payment');
+            var paymentConfirmed = false;
+            for (var i = 0; i < paymentMethods.length; i++) {
+                if (paymentMethods[i].checked) {
+                    paymentConfirmed = true;
+                    break;
+                }
+            }
+            if (paymentConfirmed) {
+                // Tampilkan pesan sukses
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('paymentSection').style.display = 'none';
+            } else {
+                alert("Silakan pilih metode pembayaran.");
+            }
+        }
+    </script>
+</body>
+</html>

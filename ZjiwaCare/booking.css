@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #CC5E39;
+  font-weight: bold;
+}
+
+footer {
+    background-color: #f8f9fa;
+}
+
+footer h6 {
+    color: #8b2e2e;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #8b2e2e;
+}
+
+.btn-success {
+    background-color: #13795d;
+    border: none;
+}
+
+.btn-outline-secondary {
+    border-color: #13795d;
+    color: #13795d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #13795d;
+    color: #fff;
+}
+
+/* Centering Navbar */
+
+
+.navbar .nav-link.box-nav {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px; /* Rounded corners */
+    color: #CC5E39; /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-link.box-nav:hover {
+    background-color: #13795d; /* Change background on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.navbar .btn-primary.box-login {
+    border: 2px solid #13795d; /* Border for login button */
+    border-radius: 5px; /* Rounded corners for consistency */
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #13795d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn-primary.box-login:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #13795d; /* Text color changes */
+    border-color: #13795d; /* Keep border color */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  h2, h5, h6 {
+    color: #d65a26;
+  }
+  .container-2{
+    position: relative;
+    top: 50px;
+    left: 20px;
+  }
+
+  .my-4{
+    position: relative;
+    top: 20px;
+    left: 30px;
+  }
+
+  .col-sm-6{
+    position: relative;
+    left: 50px;
+    top: 25px;
+
+  }
+  .table-consul.col-md-6{
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    position: relative;
+    left: 10px;
+  }
+  
+  .btn-success {
+    background-color: #2fa57a;
+    border-color: #2fa57a;
+  }
+  
+  .btn-success:hover {
+    background-color: #24996b;
+    border-color: #24996b;
+  }
+  
+  .form-check-input:checked {
+    background-color: #505050;
+    border-color: #ffffff;
+  }
+
+  .col-md-6{
+    position: relative;
+    left: 50px;
+  }
+  .form-check-input{
+    background-color: #b4b4b4;
+    border-color: #6e6e6e;
+  }
+  
+  .row.my-5{
+    position: relative;
+    top: 20px;
+  }
+  
+  .container-1{
+    position: relative;
+    top: 50px;
+  }

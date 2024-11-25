@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas ZjiwaCare</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            color: #333;
+        }
+
+        header {
+    background-color: #fef3e7;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {
+    width: 60px; /* Atur ukuran logo */
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+nav {
+    margin-right: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d95d39;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff7a5a;
+}
+
+/* Tombol Login */
+#login-button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 50px;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: #005f50;
+}
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #D0702D;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #D0702D;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .group-box {
+            background-color: #FFECDC;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            margin: 10px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #008080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #005f5f;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .share-box, .story-box {
+            background-color: #FFF8F3;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .story-box h4 {
+            color: #D0702D;
+            margin-bottom: 8px;
+        }
+
+        .story-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .story-actions button {
+            padding: 5px 10px;
+            background-color: #d0702d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .story-actions button:hover {
+            background-color: #b85c24;
+        }
+
+        .main-title {
+            color: #D0702D;
+            margin: 20px 0;
+            font-size: 1.75em;
+        }
+
+        .group-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .group-box {
+            flex-basis: 45%;
+        }
+
+        @media (max-width: 768px) {
+            .group-box {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+footer {
+    background-color: #f8ebe3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo p,
+.footer-links p,
+.footer-apps p {
+    color: #0f4c81;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #0f4c81;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-apps img {
+    width: 120px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    color: #d95d39;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+}
+
+    </style>
+</head>
+<body id="1000">
+    <header>
+        <div class="logo">
+            <img src="ZjiwaCare.png" alt="Logo ZjiwaCare">
+        </div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="informasi2.html">Informasi</a>
+                <a href="komunitas2.html">Komunitas</a>
+                <a href="riwayat.html">Riwayat</a>
+                <button id="login-button" href="login.html">Login</button>
+            </nav>
+    </header>
+    <div class="container">
+        <h2 class="main-title">Mari Bergabung dengan Komunitas</h2>
+        <p>Pilih komunitas sesuai kebutuhanmu untuk saling memberikan dukungan</p>
+
+        <div class="group-container">
+            <!-- Group Umum -->
+            <div class="group-box" id="group-mental">
+                <h2>Komunitas Kesehatan Mental</h2>
+                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
+            </div>
+
+            <!-- Group Depresi -->
+            <div class="group-box" id="group-depresi">
+                <h2>Area Depresi</h2>
+                <p>Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi depresi.</p>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
+            </div>
+
+            <!-- Group Gangguan Kecemasan -->
+            <div class="group-box" id="group-kecemasan">
+                <h2>Area Gangguan Kecemasan</h2>
+                <p>Bergabung dengan orang-orang yang memahami kecemasan dan dapat saling mendukung.</p>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
+            </div>
+
+            <!-- Group Trauma -->
+            <div class="group-box" id="group-trauma">
+                <h2>Area Trauma</h2>
+                <p>Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi trauma.</p>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
+            </div>
+
+            <!-- Group Kecanduan -->
+            <div class="group-box" id="group-kecanduan">
+                <h2>Area Kecanduan</h2>
+                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
+                <button class="btn join-btn" >Bergabung dengan Grup</button>
+            </div>
+
+            <!-- Group Burnout -->
+            <div class="group-box" id="group-burnout">
+                <h2>Area Burnout</h2>
+                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
+            </div>
+        </div>
+
+      
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ZjiwaCare.png" alt="ZjiwaCare Logo">
+                <p>PT. Zjiwa Care Nusantara</p>
+                <p>Jl. Keitintang Baru No. 100, Surabaya, Jawa Timur</p>
+                <p>zjiwacare01@gmail.com / +62 - 812-3456-7890</p>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan Konsumen</h4>
+                <p><a href="#">FAQ</a></p>
+                <p><a href="#">Hubungi Kami</a></p>
+            </div>
+            <div class="footer-apps">
+                <h4>Download App</h4>
+                <a href="#"><img src="playstore.png" alt="Google Play"></a>
+                <a href="#"><img src="appstore.png" alt="App Store"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>COPYRIGHT 2024 - ZJIWACARE</p>
+        </div>
+    </footer>
+
+    <script src="komunitas.js"></script>
+
+</body>
+</html>

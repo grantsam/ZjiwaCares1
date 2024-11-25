@@ -1,0 +1,219 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #fef3e7;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {
+    width: 60px; /* Atur ukuran logo */
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+nav {
+    margin-right: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d95d39;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff7a5a;
+}
+
+#login-button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 50px;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: #005f50;
+}
+
+#baca-informasi {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.baca-informasi-heading h2 {
+    font-size: 28px;
+    color: #d95d39;
+    font-weight: bold;
+    text-align: start;
+}
+
+.baca-informasi-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.baca-informasi-box {
+    background-color: #fef3e7;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+.baca-informasi-box p {
+    color: #d95d39;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.baca-informasi-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.baca-informasi-box button {
+    background-color: #00695c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.baca-informasi-box button:hover {
+    background-color: #004d40;
+}
+
+#tonton-video {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.tonton-video-heading h2 {
+    font-size: 28px;
+    color: #d95d39;
+    font-weight: bold;
+}
+
+.tonton-video-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tonton-video-box {
+    background-color: #fef3e7;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+.tonton-video-box p {
+    color: #d95d39;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.tonton-video-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tonton-video-box button {
+    background-color: #00695c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tonton-video-box button:hover {
+    background-color: #004d40;
+}
+
+footer {
+    background-color: #f8ebe3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo p,
+.footer-links p,
+.footer-apps p {
+    color: #0f4c81;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #0f4c81;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-apps img {
+    width: 120px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    color: #d95d39;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+}

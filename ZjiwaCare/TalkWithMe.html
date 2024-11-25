@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk With Me</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Talk with Me</h1>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <!-- Pesan Otomatis dari Bot -->
+            <div class="message bot">
+                <div class="bubble">
+                    Halo! Selamat datang di ZjiwaCare. 
+                    Bagaimana perasaanmu hari ini? Ceritakanlah, kami siap mendengarkan.
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Tulis pesan..." />
+            <button onclick="sendMessage()">Kirim</button>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            var chatBody = document.getElementById('chatBody');
+            var userInput = document.getElementById('userInput');
+            var userMessage = userInput.value.trim();
+            if (userMessage) {
+                // Tampilkan pesan pengguna
+                var userChat = document.createElement('div');
+                userChat.classList.add('message', 'user');
+                userChat.innerHTML = '<div class="bubble">' + userMessage + '</div>';
+                chatBody.appendChild(userChat);
+                // Bersihkan input setelah mengirim pesan
+                userInput.value = '';
+                // Scroll ke bawah
+                chatBody.scrollTop = chatBody.scrollHeight;
+                // Tampilkan respon otomatis
+                setTimeout(function() {
+                    var botResponse = getBotResponse(userMessage);
+                    var botChat = document.createElement('div');
+                    botChat.classList.add('message', 'bot');
+                    botChat.innerHTML = '<div class="bubble">' + botResponse + '</div>';
+                    chatBody.appendChild(botChat);
+
+                    // Scroll ke bawah
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+        // Fungsi untuk mendapatkan respon otomatis dari bot
+        function getBotResponse(message) {
+            var response = "";
+            if (message.toLowerCase().includes("stress")) {
+                response = "Saya mengerti kamu merasa stress. Cobalah untuk menarik napas dalam-dalam dan pikirkan sesuatu yang positif. Apa yang membuatmu merasa lebih baik?";
+            } else if (message.toLowerCase().includes("depresi")) {
+                response = "Saya sangat menyesal kamu merasa depresi. Penting untuk berbicara dengan seseorang yang dapat membantumu. Ingin menjadwalkan sesi dengan psikolog kami?";
+            } else if (message.toLowerCase().includes("kecemasan")) {
+                response = "Mengalami kecemasan bisa sangat menantang. Coba perhatikan pola napasmu dan fokuslah pada saat ini. Bagaimana saya bisa membantu lebih lanjut?";
+            } else {
+                response = "Terima kasih sudah berbagi. Saya di sini untuk mendengarkan. Apa lagi yang ingin kamu ceritakan?";
+            }
+
+            return response;
+        }
+    </script>
+</body>
+</html>
