@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container d-flex justify-content-center">
                 <a class="navbar-brand" href="#">
-                    <img src="ZjiwaCare.png" alt="ZjiwaCare Logo" width="100">
+                    <img src="img/ZjiwaCare.png" alt="ZjiwaCare Logo" width="100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,10 +27,10 @@
                             <a class="nav-link box-nav" href="layanan.html">Layanan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link box-nav" href="informasi2.html">Informasi</a>
+                            <a class="nav-link box-nav" href="informasi.html">Informasi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link box-nav" href="komunitas2.html">Komunitas</a>
+                            <a class="nav-link box-nav" href="komunitas.html">Komunitas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link box-nav active" href="riwayat.html">Riwayat</a>
@@ -45,110 +45,107 @@
 
         <!-- body -->
          <div class="container-1">
-            <div class="col-sm-6">
-                <h1>Formulir Pendaftaran Konsultasi</h1>
-                <form>
-                    <div class="form-group row mb-3">
-                        <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama">
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="tempatTanggalLahir" class="col-sm-2 col-form-label">Tempat, Tanggal Lahir</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="tempatTanggalLahir" placeholder="Masukkan Tempat, Tanggal Lahir">
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="umur" class="col-sm-2 col-form-label">Umur</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="umur" placeholder="Masukkan Umur">
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="jenisKelamin">
-                                <option value="">Pilih Jenis Kelamin</option>
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="pendidikan" class="col-sm-2 col-form-label">Pendidikan</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pendidikan" placeholder="Masukkan Pendidikan">
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat"></textarea>
-                        </div>
-                    </div>
-                </form>
+    <div class="col-sm-6">
+        <h1>Formulir Pendaftaran Konsultasi</h1>
+        <form class="" action="booking.php" method="POST">
+            <div class="form-group row mb-3">
+                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
+                </div>
             </div>
-        </div>
+            <div class="form-group row mb-3">
+                <label for="tanggalLahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="tanggalLahir" name="tanggalLahir" placeholder="Masukkan Tanggal Lahir" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="umur" class="col-sm-2 col-form-label">Umur</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan Umur" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="jenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="jenisKelamin" name="jenisKelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="pendidikan" class="col-sm-2 col-form-label">Pendidikan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="pendidikan" name="pendidikan" placeholder="Masukkan Pendidikan" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat" required></textarea>
+                </div>
+            </div>
+    </div>
+</div>
 
-        <!-- Consultation Schedule Section -->
-        <div class="container-2">
-            <h5 class="my-4">Jadwal Konsultasi</h5>
-                <div class="row mb-3">
-                    <div class="table-consul col-md-6">
-                        <label for="consultation-date" class="form-label">Tanggal Konsultasi</label>
-                        <input type="date" class="form-control" id="consultation-date">
-                    </div>
-                        <div class="col-md-6">
-                        <label class="form-label">Waktu Konsultasi</label>
-                            <div class="d-flex flex-wrap">
-                            <div class="form-check me-3">
-                            <input class="form-check-input" type="radio" name="consultation-time" id="time1" value="10.00 AM">
-                            <label class="form-check-label" for="time1">10.00 AM</label>
-                            </div>
-                            <div class="form-check me-3">
-                            <input class="form-check-input" type="radio" name="consultation-time" id="time2" value="13.00 PM">
-                            <label class="form-check-label" for="time2">13.00 PM</label>
-                            </div>
-                            <div class="form-check me-3">
-                            <input class="form-check-input" type="radio" name="consultation-time" id="time3" value="14.30 PM">
-                            <label class="form-check-label" for="time3">14.30 PM</label>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="consultation-time" id="time4" value="16.30 PM">
-                                <label class="form-check-label" for="time4">16.30 PM</label>
-                                </div>
-                                <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="consultation-time" id="time5" value="18.00 PM">
-                                <label class="form-check-label" for="time5">18.00 PM</label>
-                                </div>
-                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="consultation-time" id="time6" value="19.30 PM">
-                                <label class="form-check-label" for="time6">19.30 PM</label>
-                            </div>
-                        </div>
-                    </div>
+<!-- Consultation Schedule Section -->
+<div class="container-2">
+    <h5 class="my-4">Jadwal Konsultasi</h5>
+    <div class="row mb-3">
+        <div class="table-consul col-md-6">
+            <label for="tanggalKonsultasi" class="form-label">Tanggal Konsultasi</label>
+            <input type="date" class="form-control" id="tanggalKonsultasi" name="tanggalKonsultasi" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Waktu Konsultasi</label>
+            <div class="d-flex flex-wrap">
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time1" value="10.00 AM" required>
+                    <label class="form-check-label" for="time1">10.00 AM</label>
+                </div>
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time2" value="13.00 PM">
+                    <label class="form-check-label" for="time2">13.00 PM</label>
+                </div>
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time3" value="14.30 PM">
+                    <label class="form-check-label" for="time3">14.30 PM</label>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time4" value="16.30 PM">
+                    <label class="form-check-label" for="time4">16.30 PM</label>
+                </div>
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time5" value="18.00 PM">
+                    <label class="form-check-label" for="time5">18.00 PM</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="waktuKonsultasi" id="time6" value="19.30 PM">
+                    <label class="form-check-label" for="time6">19.30 PM</label>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+<!-- Service Details Section -->
+<div class="row my-5">
+    <div class="col-md-6">
+        <h6>Detail Layanan</h6>
+        <p>Alexandra Febriyanti, M.Psi<br>
+            Konsultasi Depresi<br>
+            Rp 100.000,00</p>
 
-        <!-- Service Details Section -->
-        <div class="row my-5">
-                <div class="col-md-6">
-                <h6>Detail Layanan</h6>
-                <p>Alexandra Febriyanti, M.Psi<br>
-                    Konsultasi Depresi<br>
-                    Rp 100.000,00</p>
-                    <button type="button" class="btn btn-success" id="bookNowBtn">Book Now</button>
-                </div>
-            </div>
-            </form>
-        </div>
-      </div>
+        <button type="submit" class="btn btn-success">Book Now </button>
+    </div>
+</div>
+</form>
+
 
       <!-- Footer -->
     <footer class="text-center bg-light py-4">
@@ -169,8 +166,8 @@
                 </div>
                 <div class="col-lg-3">
                     <h6>Download App</h6>
-                    <a href="#"><img src="google.png" alt="Google Play" width="100"></a><br>
-                    <a href="#"><img src="appstore.png" alt="App Store" width="100"></a>
+                    <a href="#"><img src="img/playstore.png" alt="Play Store" width="100"></a><br>
+                    <a href="#"><img src="img/appstore.png" alt="App Store" width="100"></a>
                 </div>
             </div>
             <p class="mt-4">COPY RIGHT 2024 - ZJIWACARE</p>
