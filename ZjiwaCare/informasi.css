@@ -1,3 +1,18 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+    /* Durasi 1 detik untuk fade-in */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,51 +20,43 @@ body {
     background-color: white;
 }
 
-header {
-    background-color: #fef3e7;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header .logo img {
-    width: 60px; /* Atur ukuran logo */
-    margin-right: 20px;
-    margin-left: 30px;
-}
-
-nav {
-    margin-right: 50px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #d95d39;
+.navbar .nav-link.box-nav {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    /* Rounded corners */
+    color: #CC5E39;
+    /* Text color */
     font-size: 18px;
     font-weight: bold;
-    margin-left: 30px;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover {
-    color: #ff7a5a;
+.navbar .nav-link.box-nav:hover {
+    background-color: #13795d;
+    /* Change background on hover */
+    color: #ffffff;
+    /* Change text color on hover */
 }
 
-#login-button {
-    background-color: #00796b;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+.navbar .btn-primary.box-login {
+    border: 2px solid #13795d;
+    /* Border for login button */
     border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 50px;
-    transition: background-color 0.3s ease;
+    /* Rounded corners for consistency */
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #13795d;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#login-button:hover {
-    background-color: #005f50;
+.navbar .btn-primary.box-login:hover {
+    background-color: #ffffff;
+    /* White background on hover */
+    color: #13795d;
+    /* Text color changes */
+    border-color: #13795d;
+    /* Keep border color */
 }
 
 #baca-informasi {
@@ -69,7 +76,8 @@ nav a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    /* Jarak antar card */
+    /* Hapus flex-wrap untuk memaksa card dalam satu baris */
 }
 
 .baca-informasi-box {
@@ -77,7 +85,12 @@ nav a:hover {
     padding: 20px;
     border-radius: 5px;
     width: 250px;
+    /* Lebar tetap untuk card */
     text-align: center;
+    flex: 0 0 250px;
+    /* Membuat card responsif */
+    max-width: 250px;
+    /* Maksimal lebar card */
 }
 
 .baca-informasi-box p {
@@ -112,40 +125,43 @@ nav a:hover {
     text-align: center;
 }
 
-.tonton-video-heading h2 {
+.baca-informasi-heading h2 {
     font-size: 28px;
     color: #d95d39;
     font-weight: bold;
 }
 
-.tonton-video-boxes {
+.baca-informasi-boxes {
     display: flex;
     justify-content: center;
     gap: 20px;
+    /* Jarak antar card */
     flex-wrap: wrap;
+    /* Memungkinkan card untuk membungkus ke baris berikutnya jika tidak muat */
 }
 
-.tonton-video-box {
+.baca-informasi-box {
     background-color: #fef3e7;
     padding: 20px;
     border-radius: 5px;
     width: 250px;
+    /* Lebar tetap untuk card */
     text-align: center;
 }
 
-.tonton-video-box p {
+.baca-informasi-box p {
     color: #d95d39;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-.tonton-video-box img {
+.baca-informasi-box img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.tonton-video-box button {
+.baca-informasi-box button {
     background-color: #00695c;
     color: white;
     padding: 10px 20px;
@@ -155,7 +171,7 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 
-.tonton-video-box button:hover {
+.baca-informasi-box button:hover {
     background-color: #004d40;
 }
 
@@ -202,18 +218,4 @@ footer {
 
 .footer-bottom p {
     margin: 0;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
 }

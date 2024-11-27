@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komunitas ZjiwaCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="mystyle.css">
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+            /* Durasi 1 detik untuk fade-in */
+        }
+
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
 
@@ -18,58 +34,47 @@
             color: #333;
         }
 
-        header {
-    background-color: #fef3e7;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .navbar .nav-link.box-nav {
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            /* Rounded corners */
+            color: #CC5E39;
+            /* Text color */
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-header .logo img {
-    width: 60px; /* Atur ukuran logo */
-    margin-right: 20px;
-    margin-left: 30px;
-}
+        .navbar .nav-link.box-nav:hover {
+            background-color: #13795d;
+            /* Change background on hover */
+            color: #ffffff;
+            /* Change text color on hover */
+        }
 
-nav {
-    margin-right: 50px;
-}
+        .navbar .btn-primary.box-login {
+            border: 2px solid #13795d;
+            /* Border for login button */
+            border-radius: 5px;
+            /* Rounded corners for consistency */
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #13795d;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-nav a {
-    text-decoration: none;
-    color: #d95d39;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 30px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ff7a5a;
-}
-
-/* Tombol Login */
-#login-button {
-    background-color: #00796b;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 50px;
-    transition: background-color 0.3s ease;
-}
-
-#login-button:hover {
-    background-color: #005f50;
-}
+        .navbar .btn-primary.box-login:hover {
+            background-color: #ffffff;
+            /* White background on hover */
+            color: #13795d;
+            /* Text color changes */
+            border-color: #13795d;
+            /* Keep border color */
+        }
 
         .container {
-            width: 90%;
             margin: 0 auto;
-            padding: 20px;
             text-align: left;
         }
 
@@ -130,7 +135,8 @@ nav a:hover {
             margin-bottom: 10px;
         }
 
-        .share-box, .story-box {
+        .share-box,
+        .story-box {
             background-color: #FFF8F3;
             border-radius: 8px;
             padding: 15px;
@@ -186,81 +192,91 @@ nav a:hover {
         }
 
         /* Footer */
-footer {
-    background-color: #f8ebe3;
-    padding: 50px 0;
-    text-align: center;
-}
+        footer {
+            background-color: #f8ebe3;
+            padding: 50px 0;
+            text-align: center;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding-bottom: 30px;
-}
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+        }
 
-.footer-logo p,
-.footer-links p,
-.footer-apps p {
-    color: #0f4c81;
-    margin: 5px 0;
-}
+        .footer-logo p,
+        .footer-links p,
+        .footer-apps p {
+            color: #0f4c81;
+            margin: 5px 0;
+        }
 
-.footer-links a {
-    color: #0f4c81;
-    text-decoration: none;
-}
+        .footer-links a {
+            color: #0f4c81;
+            text-decoration: none;
+        }
 
-.footer-links a:hover {
-    text-decoration: underline;
-}
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
 
-.footer-apps img {
-    width: 120px;
-    margin: 5px;
-}
+        .footer-apps img {
+            width: 120px;
+            margin: 5px;
+        }
 
-.footer-bottom {
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-    color: #d95d39;
-    font-size: 14px;
-}
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            color: #d95d39;
+            font-size: 14px;
+        }
 
-.footer-bottom p {
-    margin: 0;
-}
+        .footer-bottom p {
+            margin: 0;
+        }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
-}
 
     </style>
 </head>
-<body id="1000">
-    <header>
-        <div class="logo">
-            <img src="ZjiwaCare.png" alt="Logo ZjiwaCare">
+
+<body class="fade-in">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container d-flex justify-content-center">
+            <a class="navbar-brand" href="komunitas2.html">
+                <img src="ZjiwaCare.png" alt="ZjiwaCare Logo" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="layanan.html">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="informasi2.html">Informasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav active" href="komunitas2.html">Komunitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="riwayat.html">Riwayat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary box-login" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="layanan.html">Layanan</a>
-                <a href="informasi2.html">Informasi</a>
-                <a href="komunitas2.html">Komunitas</a>
-                <a href="riwayat.html">Riwayat</a>
-                <button id="login-button" href="login.html">Login</button>
-            </nav>
-    </header>
+    </nav>
+
     <div class="container">
         <h2 class="main-title">Mari Bergabung dengan Komunitas</h2>
         <p>Pilih komunitas sesuai kebutuhanmu untuk saling memberikan dukungan</p>
@@ -298,7 +314,7 @@ footer {
             <div class="group-box" id="group-kecanduan">
                 <h2>Area Kecanduan</h2>
                 <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
-                <button class="btn join-btn" >Bergabung dengan Grup</button>
+                <button class="btn join-btn">Bergabung dengan Grup</button>
             </div>
 
             <!-- Group Burnout -->
@@ -309,7 +325,7 @@ footer {
             </div>
         </div>
 
-      
+
     </div>
     <footer>
         <div class="footer-content">
@@ -336,6 +352,8 @@ footer {
     </footer>
 
     <script src="komunitas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

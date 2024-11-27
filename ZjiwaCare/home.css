@@ -5,74 +5,45 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Header */
-header {
-    background-color: #fef3e7;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header .logo img {
-    width: 60px; /* Atur ukuran logo */
-    margin-right: 20px;
-    margin-left: 30px;
-}
-
-nav {
-    margin-right: 50px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #d95d39;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 30px;  
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ff7a5a;
-}
-
-
-#user-name{
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 30px;
-    transition: color 0.3s ease;
-}
-
-/* Tombol Login */
-#auth-button {
-    background-color: #00796b;
-    color: white;
+.navbar .nav-link.box-nav {
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 50px;
-    transition: background-color 0.3s ease;
+    margin: 5px;
+    border-radius: 5px; /* Rounded corners */
+    color: #CC5E39; /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#login-button:hover {
-    background-color: #005f50;
+.navbar .nav-link.box-nav:hover {
+    background-color: #13795d; /* Change background on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.navbar .btn-primary.box-login {
+    border: 2px solid #13795d; /* Border for login button */
+    border-radius: 5px; /* Rounded corners for consistency */
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #13795d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn-primary.box-login:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #13795d; /* Text color changes */
+    border-color: #13795d; /* Keep border color */
 }
 
 /* Bagian Selamat Datang */
 main {
     text-align: center;
-    padding: 50px 0;
     background-color: white;
+    padding: 50px 0;
 }
 
 welcome-section {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Agar teks dan gambar diatur di dua sisi */
@@ -83,7 +54,7 @@ welcome-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%; /* Mengatur agar teks dan gambar menempati seluruh lebar */
+    width: 90%; /* Mengatur agar teks dan gambar menempati seluruh lebar */
 }
 
 .welcome-image {

@@ -47,22 +47,6 @@ if(isset($_POST["register"])) {
             <table style="margin: 0 auto; text-align: left;">
                 <tr>
                     <td>
-                        <label for="name">Nama Lengkap</label>
-                    </td>
-                    <td>
-                        <input name="name" type="text" id="name" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="phone">No. Telepon</label>
-                    </td>
-                    <td>
-                        <input name="contact" type="tel" id="phone" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <label for="email">Email</label>
                     </td>
                     <td>
@@ -75,6 +59,22 @@ if(isset($_POST["register"])) {
                     </td>
                     <td>
                         <input name="password" type="password" id="password" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Nama Lengkap</label>
+                    </td>
+                    <td>
+                        <input name="name" type="text" id="name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone">No. Telepon</label>
+                    </td>
+                    <td>
+                        <input name="contact" type="tel" id="phone" required>
                     </td>
                 </tr>
             </table>

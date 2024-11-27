@@ -3,6 +3,7 @@
 include 'database.php';
 session_start();
 $login_message="";
+$user_id="";
 
 if(isset($_SESSION["is_login"])){
     header("location: dashboard.php"); 
@@ -23,6 +24,7 @@ if(isset($_POST["login"])) {
         echo "password = " . $data["password"];
         $_SESSION["username"] = $data["username"];
         $_SESSION["is_login"] = true;
+        $_SESSION["user_id"] = $data['id'];
 
         header("location: dashboard.php");
     }
@@ -33,6 +35,7 @@ if(isset($_POST["login"])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
