@@ -75,8 +75,8 @@ if ($conn->connect_error) {
 
 ## Teknologi yang digunakan
 
-Frontend: HTML, CSS, JavaScript
-Backend: PHP
-Database: MySQL
+-Frontend: HTML, CSS, JavaScript
+-Backend: PHP
+-Database: MySQL
 
 
