@@ -39,7 +39,7 @@ if(isset($_POST['logout'])){
 
     ?>
     <h3> <?= $_SESSION['user_id'] ?> </h3>
-    <a href="dashboard.php" class="btn">update profile</a>
+    <a href="update_dashboard.php" class="btn">update profile</a>
     </div>
 
 </body>

@@ -26,7 +26,7 @@ if(isset($_POST["login"])) {
         $_SESSION["is_login"] = true;
         $_SESSION["user_id"] = $data['id'];
 
-        header("location: dashboard.php");
+        header("location: login.php");
     }
     else{
         $login_message =  "akun tidak ditemukan";
