@@ -27,6 +27,16 @@ if(isset($_POST['update_profile'])){
             $message[] = 'password updated successfully!';
         }
     }
+
+    $update_contact = mysqli_real_escape_string($db,$_POST['update_contact']);
+    $update_data_kelahiran = mysqli_real_escape_string($db,$_POST['update_data_kelahiran']);
+    $update_umur = mysqli_real_escape_string($db,$_POST['update_umur']);
+    $update_jenis_kelamin = mysqli_real_escape_string($db,$_POST['update_jenis_kelamin']);
+    $update_pendidikan_karir = mysqli_real_escape_string($db,$_POST['update_pendidikan_karir']);
+    $update_alamat = mysqli_real_escape_string($db,$_POST['update_alamat']);
+
+    mysqli_query($db,"UPDATE `users` SET contact = '$update_contact', data_kelahiran = '$update_data_kelahiran', umur = '$update_umur', jenis_kelamin = '$update_jenis_kelamin', pendidikan_karir = '$update_pendidikan_karir', alamat= '$update_alamat' WHERE id = '$user_id' ");
+
 }
 
 
@@ -38,6 +48,7 @@ if(isset($_POST['update_profile'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
@@ -69,30 +80,126 @@ if(isset($_POST['update_profile'])){
                 }
             }
         ?>
-        <div class="flex">
-            <div class="inputBox">
-                <span>name :</span>
-                <input type="text" name="update_name" value="<?php echo $data['name'] ?> " class="box">
-                <span>username :</span>
-                <input type="text" name="update_username" value="<?php echo $data['username'] ?> " class="box">
-                <span>update your pic :</span>
-                <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
-            </div>
-            <div class="inputBox">
-                <input type="hidden" name="old_password" value="<?php echo $data['password'] ?>">
-                <span>old password :</span>
-                <input type="password" name="update_password" placeholder="enter previous password" class="box">
-                <span>new password :</span>
-                <input type="password" name="new_password" placeholder="enter new password" class="box">
-                <span>confirm password :</span>
-                <input type="password" name="confirm_password" placeholder="confirm new password" class="box">
-            </div>  
+        <div class="update_dashboard-container">
+            <form action="update_dashboard.php">
+                <div class="form-group">
+                    <table style="margin: 0 auto; text-align: left;" >
+                        <tr>
+                            <td>
+                                <span>name :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_name" value="<?php echo $data['name'] ?> " class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>username :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_username" value="<?php echo $data['username'] ?> " class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>update your pic :</span>
+                            </td>
+                            <td>
+                                <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="hidden" name="old_password" value="<?php echo $data['password'] ?>">
+                                <span>old password :</span>
+                            </td>
+                            <td>
+                                <input type="password" name="update_password" placeholder="enter previous password" class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>new password :</span>
+                            </td>
+                            <td>
+                                <input type="password" name="new_password" placeholder="enter new password" class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>confirm password :</span>
+                            </td>
+                            <td>
+                                <input type="password" name="confirm_password" placeholder="confirm new password" class="box">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>contact :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_contact" value="<?php echo $data['contact'] ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>tempat, tanggal lahir :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_data_kelahiran" value="<?php echo $data['data_kelahiran'] ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>umur :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_umur" value="<?php echo $data['umur'] ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>jenis kelamin :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_jenis_kelamin" value="<?php echo $data['jenis_kelamin'] ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>pendidikan / karir :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_pendidikan_karir" value="<?php echo $data['pendidikan_karir'] ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>alamat :</span>
+                            </td>
+                            <td>
+                                <input type="text" name="update_alamat" value="<?php echo $data['alamat'] ?>">
+                            </td>
+                        </tr>
+                        <!--TABEL UNDERLINE!-->
+                        <tr>
+                            <td>
+                                <input type="submit" value="update profile" name="update_profile" class="btn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="dashboard.php" class="delete-btn">go back</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>  
+            </form>
         </div>
-        <input type="submit" value="update profile" name="update_profile" class="btn">
-        <a href="dashboard.php" class="delete-btn">go back</a>
     </form>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

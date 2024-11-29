@@ -13,6 +13,7 @@ if(isset($_POST['logout'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -29,6 +30,17 @@ if(isset($_POST['logout'])){
 
         if($result->num_rows>0) {
             $data = $result->fetch_assoc();
+            // Perbarui session dengan data terbaru 
+            $_SESSION["name"] = $data["name"];
+            $_SESSION["username"] = $data["username"];
+            $_SESSION["contact"] = $data["contact"];
+            $_SESSION["data_kelahiran"] = $data["data_kelahiran"];
+            $_SESSION["umur"] = $data["umur"];
+            $_SESSION["jenis_kelamin"] = $data["jenis_kelamin"];
+            $_SESSION["pendidikan_karir"] = $data["pendidikan_karir"];
+            $_SESSION["alamat"] = $data["alamat"];
+        } else {
+            echo "No user found.";
         }
         if($data['image'] == ''){
             echo '<img src="1.png">';   
@@ -38,9 +50,18 @@ if(isset($_POST['logout'])){
         }
 
     ?>
-    <h3> <?= $_SESSION['user_id'] ?> </h3>
+    <h3> username :<?= $_SESSION['username'] ?> </h3>
+    <h3> name :<?= $_SESSION['name'] ?> </h3>
+    <h3> contact :<?= $_SESSION['contact'] ?> </h3>
+    <h3> tempat, tanggal lahir :<?= $_SESSION["data_kelahiran"] ?> </h3>
+    <h3> umur :<?= $_SESSION['umur'] ?> </h3>
+    <h3> jenis kelamin :<?= $_SESSION['jenis_kelamin'] ?> </h3>
+    <h3> pendidikan / karir :<?= $_SESSION['pendidikan_karir'] ?> </h3>
+    <h3> alamat :<?= $_SESSION['alamat'] ?> </h3>
+
     <a href="update_dashboard.php" class="btn">update profile</a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

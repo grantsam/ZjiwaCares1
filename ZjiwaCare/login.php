@@ -23,8 +23,15 @@ if(isset($_POST["login"])) {
         echo "username = " . $data["username"];
         echo "password = " . $data["password"];
         $_SESSION["username"] = $data["username"];
+        $_SESSION["name"] = $data["name"];
+        $_SESSION["contact"] = $data["contact"];
         $_SESSION["is_login"] = true;
         $_SESSION["user_id"] = $data['id'];
+        $_SESSION["data_kelahiran"] = $data['data_kelahiran'];
+        $_SESSION["umur"] = $data['umur'];
+        $_SESSION["jenis_kelamin"] = $data['jenis_kelamin'];
+        $_SESSION["pendidikan_karir"] = $data['pendidikan_karir'];
+        $_SESSION["alamat"] = $data['alamat'];
 
         header("location: login.php");
     }
@@ -124,25 +131,25 @@ if(isset($_POST["login"])) {
     <div class="login-container">
         <form action="login.php" method="post" id="registerForm" onsubmit="return validateForm()">
             <div class="form-group">
-            <h2>Login</h2>
-            <table style="margin: 0 auto; text-align: left;">
-            <tr>  
-                <td>
-                    <label for="email">Email</label>
-                </td>
-                <td>
-                    <input name="username" type="text" id="email" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="password">Password</label>
-                </td>
-                <td>
-                    <input name="password" type="password" id="password" required>
-                </td>
-            </tr>
-            </table>
+                <h2>Login</h2>
+                <table style="margin: 0 auto; text-align: left;">
+                    <tr>  
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>
+                            <input name="username" type="text" id="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>
+                            <input name="password" type="password" id="password" required>
+                        </td>
+                    </tr>
+                </table>
             <button type="submit" class="button" name="login">Daftar</button>
         </form>
         <div class="signup-text">
