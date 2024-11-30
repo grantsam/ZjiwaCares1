@@ -6,21 +6,43 @@
     <title>ZjiwaCare-Cari Psikolog</title>
     <link rel="stylesheet" href="cari-psikolog.css">
 </head>
-<body id="1000">
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="img/ZjiwaCare.png" alt="Logo ZjiwaCare">
+    
+<body class="fade-in">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container d-flex justify-content-center">
+            <a class="navbar-brand" href="home.html">
+                <img src="ZjiwaCare.png" alt="ZjiwaCare Logo" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link box-nav active" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="layanan.html">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="informasi2.html">Informasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="komunitas2.html">Komunitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link box-nav" href="riwayat.html">Riwayat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary box-login" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="layanan.html">Layanan</a>
-            <a href="informasi.html">Informasi</a>
-            <a href="komunitas.html">Komunitas</a>
-            <a href="riwayat.html">Riwayat</a>
-            <button id="login-button" href="login.html">Login</button>
-        </nav>
-    </header>
+    </nav>
+    
     <main>
         <h1>Ingin Mulai Konsultasi?</h1>
         <p>Yuk, Kenali Psikolog Kami!</p>
