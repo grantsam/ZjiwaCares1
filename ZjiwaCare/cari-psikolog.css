@@ -1,0 +1,183 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* Header */
+header {
+    background-color: #fef3e7;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {
+    width: 60px; /* Atur ukuran logo */
+    margin-right: 20px;
+    margin-left: 30px;
+}
+
+nav {
+    margin-right: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d95d39;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff7a5a;
+}
+
+/* Tombol Login */
+#login-button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 50px;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: #005f50;
+}
+
+/* Main Content */
+main {
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #8C3130; 
+}
+
+.psychologist-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membagi menjadi 2 kolom */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.psychologist-card {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    gap: 20px;
+}
+
+.psychologist-info h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.psychologist-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Styling untuk tombol */
+.btn {
+    background-color: #00695c;
+    color: white;
+    padding: 8px 23px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d40;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #f8ebe3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo p,
+.footer-links p,
+.footer-apps p {
+    color: #0f4c81;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #0f4c81;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-apps img {
+    width: 120px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    color: #d95d39;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+}
