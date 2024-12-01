@@ -52,7 +52,7 @@
                 <div class="welcome-text">
                     <h1>Selamat Datang Gen Z</h1>
                     <p>Kami hadir untuk membantumu</p>
-                    <button id="btn-appointment">Buat Janji</button>
+                    <button id="btn-appointment"  onclick="location.href='cari-psikolog.php';">Buat Janji</button>
                 </div>
                 <div class="welcome-image">
                     <img src="2.png" alt="Ilustrasi Selamat Datang">
@@ -69,18 +69,37 @@
                     <h2>Cari Tahu Gejalamu</h2>
                     <p>Telusuri informasi yang tersedia untuk mengetahui gejalamu</p>
                     <div class="gejala-boxes">
-                        <div class="gejala-box">Depresi</div>
-                        <div class="gejala-box">Stress</div>
-                        <div class="gejala-box">Gangguan Kecemasan</div>
-                        <div class="gejala-box">Gangguan Mood</div>
-                        <div class="gejala-box">Trauma</div>
-                        <div class="gejala-box">Kecanduan</div>
-                        <div class="gejala-box">Burnout</div>
-                        <div class="gejala-box">Keluarga & Hubungan</div>
+                    <div class="gejala-box" onclick="showGejala('depresi')">
+                        <img src="img/depresi1.png"><p>Depresi</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('stres')">
+                        <img src="img/stress1.png"><p>Stres</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('kecemasan')">
+                        <img src="img/cemas1.png"><p>Gangguan Kecemasan</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('mood')">
+                        <img src="img/mood1.png"><p>Gangguan Mood</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('trauma')">
+                        <img src="img/trauma1.png"><p>Trauma</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('kecanduan')">
+                        <img src="img/candu.png"><p>Kecanduan</p>
+                    </div>
+                    <div class="gejala-box" onclick="showGejala('hubungan')">
+                        <img src="img/hubungan1.png"><p>Keluarga & Hubungan</p>
+                    </div>
+                    </div>
+
+                    <div id="gejala-description">
+                    <p style="font-size: 13px; color: #333; text-align: justify; margin: 20px 0;">
+                    Depresi adalah gangguan kesehatan mental yang umum dan serius yang ditandai dengan suasana hati yang rendah, kehilangan minat atau kesenangan, dan berbagai gejala fisik dan mental lainnya. Meskipun kesedihan adalah emosi yang normal, depresi berbeda karena intensitas dan durasinya yang lebih besar, serta dampaknya yang signifikan pada kehidupan sehari-hari.
+                    </p>
                     </div>
                 </div>
             </div>
-            <button id="find-psychologist-button">Cari Psikolog</button>
+            <button id="find-psychologist-button" onclick="location.href='cari-psikolog.php';">Cari Psikolog</button>
         </section>
         <!-- Section Tes Kesehatan Mental -->
         <section id="tes-kesehatan">
@@ -90,20 +109,24 @@
             </div>
             <div class="tes-boxes">
                 <div class="tes-box">
+                    <img src="img/tes-stress.png" alt="Tes Stress">
                     <h3>Tes Stress</h3>
-                    <button>Kerjakan</button>
+                    <button onclick="location.href='#';">Kerjakan</button>
                 </div>
                 <div class="tes-box">
+                    <img src="img/tes-cemas.png" alt="Tes Gangguan Kecemasan">
                     <h3>Tes Gangguan Kecemasan</h3>
-                    <button>Kerjakan</button>
+                    <button onclick="location.href='#';">Kerjakan</button>
                 </div>
                 <div class="tes-box">
+                    <img src="img/tes-depresi.png" alt="Tes Depresi">
                     <h3>Tes Depresi</h3>
-                    <button>Kerjakan</button>
+                    <button onclick="location.href='#';">Kerjakan</button>
                 </div>
                 <div class="tes-box">
+                    <img src="img/tes-mood.png" alt="Tes Gangguan Mood">
                     <h3>Tes Gangguan Mood</h3>
-                    <button>Kerjakan</button>
+                    <button onclick="location.href='#';">Kerjakan</button>
                 </div>
             </div>
         </section>
@@ -117,17 +140,17 @@
                 <div class="layanan-box">
                     <img src="konsul video.png" alt="gambar konsul video">
                     <h3>Konsultasi Video Call</h3>
-                    <button>Selengkapnya</button>
+                    <button onclick="location.href='#';">Selengkapnya</button>
                 </div>
                 <div class="layanan-box">
                     <img src="konsul chat.png" alt="Gambar Konsul chat">
                     <h3>Konsultasi Chat</h3>
-                    <button>Selengkapnya</button>
+                    <button onclick="location.href='#';">Selengkapnya</button>
                 </div>
                 <div class="layanan-box">
                     <img src="talk with me.png" alt="Gambar talk with me">
                     <h3>Talk With Me</h3>
-                    <button>Selengkapnya</button>
+                    <button onclick="location.href='#';">Selengkapnya</button>
                 </div>
             </div>
         </section>
@@ -151,7 +174,7 @@
                     <h3>Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?</h3>
                 </div>
             </div>
-            <button class="lihat-semua">Lihat Semua</button>
+            <button class="lihat-semua" onclick="location.href='#';">Lihat Semua</button>
         </section>
         <!-- Footer -->
         <footer>

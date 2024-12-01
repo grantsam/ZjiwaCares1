@@ -1,0 +1,164 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.navbar .nav-link.box-nav {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px; /* Rounded corners */
+    color: #CC5E39; /* Text color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-link.box-nav:hover {
+    background-color: #13795d; /* Change background on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.navbar .btn-primary.box-login {
+    border: 2px solid #13795d; /* Border for login button */
+    border-radius: 5px; /* Rounded corners for consistency */
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #13795d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn-primary.box-login:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #13795d; /* Text color changes */
+    border-color: #13795d; /* Keep border color */
+}
+
+/* Main Content */
+main {
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #8C3130; 
+}
+
+.psychologist-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membagi menjadi 2 kolom */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.psychologist-card {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    gap: 20px;
+}
+
+.psychologist-info h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.psychologist-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Styling untuk tombol */
+.btn {
+    background-color: #00695c;
+    color: white;
+    padding: 8px 23px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d40;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #f8ebe3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo p,
+.footer-links p,
+.footer-apps p {
+    color: #0f4c81;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #0f4c81;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-apps img {
+    width: 120px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    color: #d95d39;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+}
