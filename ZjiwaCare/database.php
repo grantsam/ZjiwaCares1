@@ -12,6 +12,4 @@ if($db->connect_error) {
     die("error"); 
 }
 
-echo "koneksi berhasil";
-
 ?>

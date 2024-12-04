@@ -50,22 +50,16 @@
 
         <div class="psychologist-list">
             <?php
-            // Koneksi ke database
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "zjiwacare";
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            include 'database.php';
 
             // Periksa koneksi
-            if ($conn->connect_error) {
-                die("Koneksi gagal: " . $conn->connect_error);
+            if ($db->connect_error) {
+                die("Koneksi gagal: " . $db->connect_error);
             }
 
             // Query untuk mengambil data psikolog
             $sql = "SELECT * FROM psychologists";
-            $result = $conn->query($sql);
+            $result = $db->query($sql);
 
             if ($result->num_rows > 0) {
                 // Output data dari setiap baris
@@ -78,7 +72,7 @@
                             <p>' . $row['spesialisasi'] . '</p>
                             <p>' . $row['deskripsi'] . '</p><br>
                             <div class="button-group">
-                            <a href="booking.html?nama=' . urlencode($row['nama']) . '&spesialisasi=' . urlencode($row['spesialisasi']) . '&harga=' . urlencode($row['harga']) . '" class="btn">Buat Jadwal</a>
+                            <a href="booking.php?nama=' . urlencode($row['nama']) . '&spesialisasi=' . urlencode($row['spesialisasi']) . '&harga=' . urlencode($row['harga']) . '" class="btn">Buat Jadwal</a>
                             <a href="' . $row['chat_url'] . '" class="btn">Chat</a>
                             </div>
                         </div>
@@ -88,7 +82,7 @@
                 echo "<p>Tidak ada data psikolog tersedia.</p>";
             }
 
-            $conn->close();
+            $db->close();
             ?>
         </div>
     </main>
