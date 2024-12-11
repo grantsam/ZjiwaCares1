@@ -52,17 +52,17 @@
                 <h4>Pembayaran Konsultasi</h4>
                 <h5 style="padding: 10px;">pilih Metode Pembayaran</h5>
                 <div class="px-3">
-                    <form id="paymentForm" action="bayar.html" method="POST">
+                    <form id="paymentForm" action="bayar.php" method="POST">
                         <!-- E-Wallet -->
                         <h5 class="fw-light">E-Wallet</h5>
                         <div class="form-check border p-3 rounded mb-2">
-                            <input class="form-check-input" type="radio" name="gopay" id="gopay">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="gopay" value="gopay">
                             <label class="form-check-label d-flex align-items-center" for="gopay">
                                 <img src="./img/image 23.png" alt="Gopay" style="height: 30px;" class="me-2">
                             </label>
                         </div>
                         <div class="form-check border p-3 rounded mb-2">
-                            <input class="form-check-input" type="radio" name="ovo" id="ovo">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="ovo" value="ovo">
                             <label class="form-check-label d-flex align-items-center" for="ovo">
                                 <img src="./img/image 24.png" alt="OVO" style="height: 30px;" class="me-2">
                             </label>
@@ -71,25 +71,25 @@
                         <div>
                             <h5 class="fw-light">Transfer Bank</h5>
                             <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="bca" id="bca">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="bca" value="bca">
                                 <label class="form-check-label d-flex align-items-center" for="bca">
                                     <img src="./img/image 25.png" alt="BCA" style="height: 30px;" class="me-2">
                                 </label>
                             </div>
                             <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="mandiri" id="mandiri">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="mandiri" value="mandiri">
                                 <label class="form-check-label d-flex align-items-center" for="mandiri">
                                     <img src="./img/image 26.png" alt="Mandiri" style="height: 30px;" class="me-2">
                                 </label>
                             </div>
                             <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="bri" id="bri">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="bri" value="bri">
                                 <label class="form-check-label d-flex align-items-center" for="bri">
                                     <img src="./img/image 27.png" alt="BRI" style="height: 30px;" class="me-2">
                                 </label>
                             </div>
                             <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="bni" id="bni">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="bni" value="bni">
                                 <label class="form-check-label d-flex align-items-center" for="bni">
                                     <img src="./img/image 28.png" alt="BNI" style="height: 30px;" class="me-2">
                                 </label>
@@ -191,6 +191,8 @@
 
     <script src="bayar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+
 </body>
 
 </html>
