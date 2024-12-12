@@ -1,41 +1,57 @@
-
-document.getElementById('payButton').addEventListener('click', function () {
-    // Ambil elemen form
-    const form = document.getElementById('paymentForm');
-    // Cek apakah form valid
-    if (form.checkValidity()) {
-        // Tampilkan informasi VA
-        document.getElementById('vaPaymentInfo').style.display = 'block';
-    } else {
-        // Jika tidak valid, tampilkan pesan kesalahan
-        alert('Silakan lengkapi semua field yang diperlukan.');
-    }
-});
-
-// GET DATA
-document.getElementById('successButton').addEventListener('click', function (event) {
-    event.preventDefault(); // Mencegah form dari pengiriman default
-
-    // Ambil nilai metode pembayaran yang dipilih
-    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-    const selectedMethod = paymentMethod ? paymentMethod.value : 'Tidak ada metode yang dipilih';
-
-    // Simpan pilihan ke sessionStorage
-    sessionStorage.setItem('selectedPaymentMethod', selectedMethod);
-
-    // Arahkan ke halaman detail-pembayaran
-    window.location.href = 'detail-pembayaran.php';
-});
-
-document.getElementById('failButton').addEventListener('click', function () {
-    alert('Pembayaran gagal. Silakan coba lagi.');
-    // You can redirect or perform other actions here
-});
-
-//Transaction ID generator
 document.addEventListener('DOMContentLoaded', function () {
-    const transactionId = 'TXN-' + uuid.v4(); // Menghasilkan UUID
-    // Simpan pilihan ke sessionStorage
+    // Generate transaction ID on page load
+    const transactionId = 'TXN-' + uuid.v4();
     sessionStorage.setItem('transactionId', transactionId);
+    document.getElementById('transactionIdInput').value = transactionId; // Tampilkan ID transaksi
 
+    // Initialize payment button handler
+    const payButton = document.getElementById('payButton');
+    const paymentForm = document.getElementById('paymentForm');
+    const selectedPaymentMethodInput = document.getElementById('selectedPaymentMethod');
+
+    if (payButton) {
+        payButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+            const vaPaymentInfo = document.getElementById('vaPaymentInfo');
+
+            if (selectedPayment) {
+                // Store selected payment method in hidden input
+                selectedPaymentMethodInput.value = selectedPayment.value;
+
+                // Show VA payment info
+                if (vaPaymentInfo) {
+                    vaPaymentInfo.style.display = 'block';
+                    vaPaymentInfo.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                alert('Silakan pilih metode pembayaran terlebih dahulu.');
+            }
+        });
+    }
+
+    // Initialize success button handler
+    const successButton = document.getElementById('successButton');
+    if (successButton) {
+        successButton.addEventListener('click', function (e) {
+            // Don't prevent default - let the form submit
+            const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+            if (selectedPayment) {
+                selectedPaymentMethodInput.value = selectedPayment.value;
+                paymentForm.submit();
+                window.location.href = "detail-pembayaran.php";
+            } else {
+                e.preventDefault();
+                alert('Silakan pilih metode pembayaran terlebih dahulu.');
+            }
+        });
+    }
+
+    // Initialize fail button handler
+    const failButton = document.getElementById('failButton');
+    if (failButton) {
+        failButton.addEventListener('click', function () {
+            alert('Pembayaran gagal. Silakan coba lagi.');
+        });
+    }
 });

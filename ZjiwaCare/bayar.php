@@ -1,3 +1,74 @@
+<?php
+include 'database.php';
+session_start();
+
+// Move the payment processing to the top
+if (isset($_POST["submit"])) {
+    if (isset($_SESSION['username']) && isset($_POST['paymentMethod'])) {
+        try {
+            // Get session data
+            $id_transaksi = $_POST['id_transaksi'];
+            $username = $_SESSION['username'];
+            $nama = $_SESSION['nama'];
+            $tanggalLahir = $_SESSION['tanggalLahir'];
+            $umur = (int) $_SESSION['umur'];
+            $jeniskelamin = $_SESSION['jenisKelamin'];
+            $pendidikan = $_SESSION['pendidikan'];
+            $alamat = $_SESSION['alamat'];
+            $tanggalKonsultasi = $_SESSION['tanggalKonsultasi'];
+            $waktuKonsultasi = $_SESSION['waktuKonsultasi'];
+            $psikolog = $_SESSION['selected_psikolog'];
+            $harga = $_SESSION['selected_harga'];
+            $metode_pembayaran = $_POST['paymentMethod'];
+
+            $query = "INSERT INTO pembayaran (
+                id_transaksi, username, nama, tanggal_lahir, umur, 
+                jenis_kelamin, pendidikan, alamat, 
+                tanggal_konsultasi, waktu_konsultasi, 
+                psikolog, harga, metode_pembayaran
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            if ($stmt = $db->prepare($query)) {
+                $stmt->bind_param(
+                    "ssssissssssss",
+                    $id_transaksi,
+                    $username,
+                    $nama,
+                    $tanggalLahir,
+                    $umur,
+                    $jeniskelamin,
+                    $pendidikan,
+                    $alamat,
+                    $tanggalKonsultasi,
+                    $waktuKonsultasi,
+                    $psikolog,
+                    $harga,
+                    $metode_pembayaran
+                );
+
+                if ($stmt->execute()) {
+                    $_SESSION['payment_success'] = true;
+                    header("Location: detail-pembayaran.php");
+                    exit;
+                } else {
+                    throw new Exception("Error executing statement: " . $stmt->error);
+                }
+            } else {
+                throw new Exception("Error preparing statement: " . $db->error);
+            }
+        } catch (Exception $e) {
+            echo "<div class='alert alert-danger'>Error: " . $e->getMessage() . "</div>";
+        } finally {
+            if (isset($stmt)) {
+                $stmt->close();
+            }
+        }
+    } else {
+        echo "<div class='alert alert-danger'>Missing required data. Please ensure you are logged in and have selected a payment method.</div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +148,8 @@
                                 </label>
                             </div>
                             <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="mandiri" value="mandiri">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="mandiri"
+                                    value="mandiri">
                                 <label class="form-check-label d-flex align-items-center" for="mandiri">
                                     <img src="./img/image 26.png" alt="Mandiri" style="height: 30px;" class="me-2">
                                 </label>
@@ -94,9 +166,9 @@
                                     <img src="./img/image 28.png" alt="BNI" style="height: 30px;" class="me-2">
                                 </label>
                             </div>
-                        </div>
 
-                        <!-- Kartu Debit/Kredit -->
+                        </div>
+                        <input type="hidden" name="id_transaksi" id="transactionIdInput">
                         <div>
                             <h5 class="fw-bold mt-4">Kartu Debit/Kredit</h5>
                             <div class="form-check border p-3 rounded mb-2">
@@ -141,22 +213,26 @@
                                         <input type="password" class="form-control" id="code_post" name="card_pos"
                                             required placeholder="Masukkan Kode Pos">
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Add a hidden input for the selected payment method -->
+                        <input type="hidden" name="selectedPaymentMethod" id="selectedPaymentMethod">   
+
+                        <!-- Button -->
+                        <button class="btn btn-success m-3" id="payButton">Bayar</button>
+
+                        <!-- VA Payment Info -->
+                        <div id="vaPaymentInfo" class="mt-4" style="display: none;">
+                            <h5>Informasi Virtual Account</h5>
+                            <p>Nomor VA: 1234567890</p>
+                            <p>Jumlah Pembayaran: Rp 100.000</p>
+                            <button name="submit" class="btn btn-success" id="successButton">Berhasil</button>
+                            <button class="btn btn-danger" id="failButton">Gagal</button>
+                        </div>
                     </form>
-
-                    <!-- Button -->
-                    <button class="btn btn-success m-3" id="payButton">Bayar</button>
-
-                    <!-- VA Payment Info -->
-                    <div id="vaPaymentInfo" class="mt-4" style="display: none;">
-                        <h5>Informasi Virtual Account</h5>
-                        <p>Nomor VA: 1234567890</p>
-                        <p>Jumlah Pembayaran: Rp 100.000</p>
-                        <button class="btn btn-success" id="successButton">Berhasil</button>
-                        <button class="btn btn-danger" id="failButton">Gagal</button>
-                    </div>
                 </div>
     </section>
 

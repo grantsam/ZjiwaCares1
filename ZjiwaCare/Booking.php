@@ -60,6 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['alamat'] = $alamat;
     $_SESSION['tanggalKonsultasi'] = $tanggalKonsultasi;
     $_SESSION['waktuKonsultasi'] = $waktuKonsultasi;
+    $_SESSION['psikolog'] = $psikolog;
+    $_SESSION['harga'] = $harga;
 
 
     // Create the query with properly escaped values
