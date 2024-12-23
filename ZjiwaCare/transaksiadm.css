@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #FCF4EC;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 50px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #CC5E39;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #CC5E39;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #86A5A8;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.status.selesai {
+    background-color: #28a745;
+}
+
+.status.menunggu {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+.status.gagal {
+    background-color: #dc3545;
+}
+
+.btn-print {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-print:hover {
+    background-color: #0056b3;
+}
+
+.admin-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #19807F;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-button:hover {
+    background-color: #19807F;
+}
