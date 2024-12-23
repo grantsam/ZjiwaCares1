@@ -1,0 +1,92 @@
+  body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+  }
+
+  .navbar .nav-link.box-nav {
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px; /* Rounded corners */
+      color: #CC5E39; /* Text color */
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+  .navbar .nav-link.box-nav:hover {
+      background-color: #13795d; /* Change background on hover */
+      color: #ffffff; /* Change text color on hover */
+  }
+
+  .navbar .btn-primary.box-login {
+      border: 2px solid #13795d; /* Border for login button */
+      border-radius: 5px; /* Rounded corners for consistency */
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #13795d;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+  .navbar .btn-primary.box-login:hover {
+      background-color: #ffffff; /* White background on hover */
+      color: #13795d; /* Text color changes */
+      border-color: #13795d; /* Keep border color */
+  }
+
+
+
+  main {
+      text-align: Left;
+      background-color: white;
+      padding: 50px 0;
+  }
+
+    .daftar-psikolog h2 {
+      font-size: 28px;
+      color: #d95d39;
+      font-weight: bold;
+    }
+    .form-section,
+    .table-section {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid #ddd; /* Garis petak */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .btn-primary {
+      background-color: #0075FF;
+      border-color: #0075FF;
+    }
+    .btn-primary:hover {
+      background-color: #104E98;
+      border-color: #104E98;
+    }
+    .btn-danger {
+      background-color: #8C3130;
+      border-color: #8C3130;
+    }
+    .btn-danger:hover {
+      background-color: #652F2E;
+      border-color: #652F2E;
+    }
+    .d-flex button {
+  margin: 0 5px; /* Menambahkan jarak antara tombol */
+}
+
+
+
+
+    
+
+
+   
