@@ -59,7 +59,8 @@ if(isset($_POST['logout'])){
     <h3> pendidikan / karir :<?= $_SESSION['pendidikan_karir'] ?> </h3>
     <h3> alamat :<?= $_SESSION['alamat'] ?> </h3>
 
-    <button href="update_dashboard.php" class="btn">update profile</button>
+    <a href="update_dashboard.php" class="btn">Update Profile</a>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
