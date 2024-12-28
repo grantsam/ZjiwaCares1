@@ -73,40 +73,14 @@
             /* Keep border color */
         }
 
-        .container {
-            margin: 0 auto;
-            text-align: left;
+        .main-title {
+            color: #ad3023;
+            font-weight: bold;
         }
 
-        h1 {
-            color: #D0702D;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #D0702D;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #555;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-        .group-box {
-            background-color: #FFECDC;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            display: inline-block;
-            width: 45%;
-            vertical-align: top;
-            margin: 10px;
-            text-align: left;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .card-title {
+            font-size: 1.25rem;
+            color: #cc5f3a;
         }
 
         .btn {
@@ -121,74 +95,6 @@
 
         .btn:hover {
             background-color: #005f5f;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .share-box,
-        .story-box {
-            background-color: #FFF8F3;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        .story-box h4 {
-            color: #D0702D;
-            margin-bottom: 8px;
-        }
-
-        .story-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .story-actions button {
-            padding: 5px 10px;
-            background-color: #d0702d;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .story-actions button:hover {
-            background-color: #b85c24;
-        }
-
-        .main-title {
-            color: #D0702D;
-            margin: 20px 0;
-            font-size: 1.75em;
-        }
-
-        .group-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .group-box {
-            flex-basis: 45%;
-        }
-
-        @media (max-width: 768px) {
-            .group-box {
-                width: 100%;
-            }
         }
 
         /* Footer */
@@ -236,9 +142,8 @@
         .footer-bottom p {
             margin: 0;
         }
-
-
     </style>
+    
 </head>
 
 <body class="fade-in">
@@ -277,56 +182,100 @@
         </div>
     </nav>
 
-    <div class="container">
+    <main>
+    <div class="container py-5">
         <h2 class="main-title">Mari Bergabung dengan Komunitas</h2>
-        <p>Pilih komunitas sesuai kebutuhanmu untuk saling memberikan dukungan</p>
+        <p class="mb-4">Pilih komunitas sesuai kebutuhanmu untuk saling memberikan dukungan</p>
 
-        <div class="group-container">
+        <!-- Group Container -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <!-- Group Umum -->
-            <div class="group-box" id="group-mental">
-                <h2>Komunitas Kesehatan Mental</h2>
-                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/kesehatanmental.png" class="card-img-top" alt="Komunitas Kesehatan Mental">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Komunitas Kesehatan Mental</h5>
+                        <p class="card-text">Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p><br>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Group Depresi -->
-            <div class="group-box" id="group-depresi">
-                <h2>Area Depresi</h2>
-                <p>Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi depresi.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/areadepresi.png" class="card-img-top" alt="Area Depresi">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area Depresi</h5>
+                        <p class="card-text">Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi depresi.</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Group Gangguan Kecemasan -->
-            <div class="group-box" id="group-kecemasan">
-                <h2>Area Gangguan Kecemasan</h2>
-                <p>Bergabung dengan orang-orang yang memahami kecemasan dan dapat saling mendukung.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/areacemas.png" class="card-img-top" alt="Area Gangguan Kecemasan">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area Gangguan Kecemasan</h5>
+                        <p class="card-text">Bergabung dengan orang-orang yang memahami kecemasan dan dapat saling mendukung.</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Group Trauma -->
-            <div class="group-box" id="group-trauma">
-                <h2>Area Trauma</h2>
-                <p>Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi trauma.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/areatrauma.png" class="card-img-top" alt="Area Trauma">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area Trauma</h5>
+                        <p class="card-text">Berbagi cerita dan dapatkan dukungan dari komunitas yang memahami tantangan menghadapi trauma.</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Group Kecanduan -->
-            <div class="group-box" id="group-kecanduan">
-                <h2>Area Kecanduan</h2>
-                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/areacandu.png" class="card-img-top" alt="Area Kecanduan">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area Kecanduan</h5>
+                        <p class="card-text">Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p><br>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Group Burnout -->
-            <div class="group-box" id="group-burnout">
-                <h2>Area Burnout</h2>
-                <p>Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p>
-                <button class="btn join-btn">Bergabung dengan Grup</button>
+            <div class="col">
+                <div class="card shadow-sm border-light rounded">
+                    <img src="img/areaburnout.png" class="card-img-top" alt="Area Burnout">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area Burnout</h5>
+                        <p class="card-text">Diskusikan segala hal tentang kesehatan mental dengan anggota komunitas lainnya.</p><br>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-success">Bergabung dengan Grup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
+</main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
