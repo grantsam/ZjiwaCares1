@@ -73,7 +73,7 @@
                             <p>' . $row['deskripsi'] . '</p><br>
                             <div class="button-group">
                             <a href="booking.php?nama=' . urlencode($row['nama']) . '&spesialisasi=' . urlencode($row['spesialisasi']) . '&harga=' . urlencode($row['harga']) . '" class="btn">Buat Jadwal</a>
-                            <a href="' . $row['chat_url'] . '" class="btn">Chat</a>
+                            <a href="home.html" class="btn">Chat</a>
                             </div>
                         </div>
                     </div>';

@@ -2,10 +2,19 @@
 include 'database.php';
 session_start();
 
+// Pastikan booking_id digunakan di pembayaran
+if (isset($_SESSION['booking_id'])) {
+    $booking_id = $_SESSION['booking_id'];
+} else {
+    echo "<div class='alert alert-danger'>Booking ID tidak ditemukan.</div>";
+    exit;
+}
+
 // Move the payment processing to the top
 if (isset($_POST["submit"])) {
     if (isset($_SESSION['username']) && isset($_POST['paymentMethod'])) {
         try {
+
             // Get session data
             $id_transaksi = $_POST['id_transaksi'];
             $username = $_SESSION['username'];
@@ -25,12 +34,12 @@ if (isset($_POST["submit"])) {
                 id_transaksi, username, nama, tanggal_lahir, umur, 
                 jenis_kelamin, pendidikan, alamat, 
                 tanggal_konsultasi, waktu_konsultasi, 
-                psikolog, harga, metode_pembayaran
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                psikolog, harga, metode_pembayaran, booking_id
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             if ($stmt = $db->prepare($query)) {
                 $stmt->bind_param(
-                    "ssssissssssss",
+                    "ssssissssssssi",
                     $id_transaksi,
                     $username,
                     $nama,
@@ -43,7 +52,8 @@ if (isset($_POST["submit"])) {
                     $waktuKonsultasi,
                     $psikolog,
                     $harga,
-                    $metode_pembayaran
+                    $metode_pembayaran,
+                    $booking_id
                 );
 
                 if ($stmt->execute()) {

@@ -64,15 +64,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['harga'] = $harga;
 
 
+    $user_id = $_SESSION['user_id'];
+
+
     // Create the query with properly escaped values
     $query = "INSERT INTO booking (nama, tanggalLahir, umur, jenisKelamin, pendidikan, alamat, 
-                tanggalKonsultasi, waktuKonsultasi, psikolog, spesialisasi, harga)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                tanggalKonsultasi, waktuKonsultasi, psikolog, spesialisasi, harga, user_id)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Use prepared statement
     if ($stmt = $db->prepare($query)) {
         $stmt->bind_param(
-            "ssissssssss",
+            "ssissssssssi",
             $nama,
             $tanggalLahir,
             $umur,
@@ -83,11 +86,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $waktuKonsultasi,
             $psikolog,
             $spesialisasi,
-            $harga
+            $harga,
+            $user_id
         );
 
         if ($stmt->execute()) {
             echo "<div class='alert alert-success'>Data berhasil disimpan.</div>";
+            echo "<script>
+            setTimeout(function() {
+            window.location.href = 'bayar.php'; // Ganti dengan URL halaman tujuan
+            }, 3000); // Waktu dalam milidetik (3000 ms = 3 detik)
+            </script>";
+            $booking_id = $db->insert_id; // Dapatkan ID terakhir
+            $_SESSION['booking_id'] = $booking_id;
         } else {
             echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
         }
