@@ -38,56 +38,57 @@
                         <a class="nav-link box-nav" href="riwayat.html">Riwayat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary box-login" href="login.html">Login</a>
+                        <a class="btn btn-primary box-login" href="login.php">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="pilih-layanan-text">
-        <h1>Pilih Layanan Konsultasi sesuai Keinginanmu</h1>
-    </div>
-    <!-- Bagian layanan video -->
+     <!-- Bagian layanan video -->
     <main>
-        <section id="layanan-video-section">
-            <div class="layanan-video-content">
-                <div class="layanan-video-text">
+        <div class="pilih-layanan-text text-center">
+            <h1>Pilih Layanan Konsultasi sesuai Keinginanmu</h1>
+        </div>
+        <section id="layanan-video-section" class="d-flex align-items-center justify-content-center">
+            <div class="layanan-video-content d-flex align-items-center">
+                <div class="layanan-video-text me-4">
                     <h1>Konsultasi Online Video</h1>
                     <p>Konsultasi lewat online video untuk berinteraksi langsung dengan psikolog pilihanmu</p>
-                    <button id="cari-psikolog-btn">Cari Psikolog</button>
+                    <button id="cari-psikolog-btn" onclick="location.href='cari-psikolog.php';">Cari Psikolog</button>
                 </div>
                 <div class="layanan-video-image">
-                    <img src="konsul video 2.png" alt="konsul-video2">
+                    <img src="konsul video 2.png" alt="konsul-video2" class="img-fluid layanan-image">
                 </div>
             </div>
         </section>
         <!-- Bagian layanan chat-->
-        <section id="layanan-chat-section">
-            <div class="layanan-chat-content">
+        <section id="layanan-chat-section" class="d-flex align-items-center justify-content-center">
+            <div class="layanan-chat-content d-flex align-items-center">
+                <div class="layanan-chat-image me-4">
+                    <img src="konsul chat 2.png" alt="konsul-chat2" class="img-fluid layanan-image">
+                </div>
                 <div class="layanan-chat-text">
                     <h1>Konsultasi Online Chat</h1>
                     <p>Konsultasi lewat online chat untuk berinteraksi secara text dengan psikolog pilihanmu</p>
-                    <button id="cari-psikolog-btn">Cari Psikolog</button>
-                </div>
-                <div class="layanan-chat-image">
-                    <img src="konsul chat 2.png" alt="konsul-chat2">
+                    <button id="cari-psikolog-btn" onclick="location.href='cari-psikolog.php';">Cari Psikolog</button>
                 </div>
             </div>
         </section>
         <!-- Bagian talk with me-->
-        <section id="talk-wme-section">
-            <div class="talk-wme-content">
-                <div class="talk-wme-text">
+        <section id="talk-wme-section" class="d-flex align-items-center justify-content-center">
+            <div class="talk-wme-content text-center">
+                <div class="talk-wme-text mb-3">
                     <h1>Talk With Me</h1>
                     <p>Bagikan keluhanmu dengan chatbot kami yang siap melayani dan menemani selama 24 jam</p>
-                    <button id="chat-sekarang-btn">Chat Sekarang</button>
+                    <button id="chat-sekarang-btn" onclick="location.href='cari-psikolog.php';">Chat Sekarang</button>
                 </div>
                 <div class="talk-wme-image">
-                    <img src="talk with me.png" alt="talk-wme">
+                    <img src="talk with me.png" alt="talk-wme" class="img-fluid layanan-image"> 
                 </div>
             </div>
         </section>
+    </main>
         <!-- Footer -->
         <footer>
             <div class="footer-content">
