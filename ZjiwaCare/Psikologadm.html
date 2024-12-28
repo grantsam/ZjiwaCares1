@@ -50,73 +50,111 @@
 
     <!-- Form Tambah Psikolog -->
     <div class="form-section mb-4">
-      <form>
+       <form action="" method="POST" enctype="multipart/form-data">
         <div class="row align-items-center">
           <div class="col-md-8">
             <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="Nama">
+              <label for="nama" class="form-label">Nama Psikolog</label>
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Psikolog" required>
             </div>
             <div class="mb-3">
-              <label for="profesi" class="form-label">Profesi</label>
-              <input type="text" class="form-control" id="profesi" placeholder="Profesi">
+              <label for="spesialisasi" class="form-label">Spesialisasi</label>
+              <input type="text" class="form-control" id="spesialisasi" name="spesialisasi" placeholder="Spesialisasi" required>
+            </div>
+            <div class="mb-3">
+              <label for="harga" class="form-label">Harga Konsultasi</label>
+              <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga Konsultasi" required>
             </div>
             <div class="mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
-              <textarea class="form-control" id="deskripsi" rows="3" placeholder="Deskripsi"></textarea>
+              <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" placeholder="Deskripsi"  required></textarea>
             </div>
           </div>
           <div class="col-md-4 text-center">
-            <label for="uploadGambar" class="form-label d-block">Upload Gambar</label>
+            <label for="foto" class="form-label d-block">Upload Gambar</label>
             <img src="https://via.placeholder.com/120" alt="Profil" class="profile-img mb-3">
-            <input type="file" class="form-control" id="uploadGambar">
-            <button type="submit" class="btn btn-success mt-3 w-100">Tambah</button>
+            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" required>
+            <button type="submit" class="btn btn-success mt-3 w-100" name="submit">Tambah</button>
           </div>
         </div>
       </form>
     </div>
+
+    <!-- PHP Logic -->
+        <?php
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+            // Database configuration
+            $host = 'localhost';
+            $user = 'root';
+            $password = '';
+            $database = 'users_zjiwa';
+
+            // Connect to the database
+            $db = new mysqli($host, $user, $password, $database);
+
+            if ($db->connect_error) {
+                die("Koneksi gagal: " . $db->connect_error);
+            }
+
+            // Handle file upload
+            $foto = $_FILES['foto']['name'];
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($foto);
+            move_uploaded_file($_FILES['foto']['tmp_name'], $target_file);
+
+            // Insert data into the database
+            $nama = $db->real_escape_string($_POST['nama']);
+            $spesialisasi = $db->real_escape_string($_POST['spesialisasi']);
+            $deskripsi = $db->real_escape_string($_POST['deskripsi']);
+            $harga = $db->real_escape_string($_POST['harga']);
+
+            $sql = "INSERT INTO psychologists (nama, spesialisasi, deskripsi, harga, foto) VALUES ('$nama', '$spesialisasi', '$deskripsi', '$harga', '$target_file')";
+
+            if ($db->query($sql) === TRUE) {
+                echo "<div class='alert alert-success'>Data berhasil disimpan.</div>";
+            } else {
+                echo "<div class='alert alert-danger'>Terjadi kesalahan: " . $db->error . "</div>";
+            }
+        }
+        ?>
 
     <!-- Tabel Psikolog -->
     <div class="table-section">
       <table class="table table-striped align-middle">
         <thead class="table-light text-center">
           <tr>
+            <th>No</th>
             <th>Profil</th>
             <th>Nama</th>
-            <th>Profesi</th>
+            <th>Spesialisasi</th>
             <th>Deskripsi</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="text-center">
-              <img src="https://via.placeholder.com/120" alt="Profil" class="profile-img">
-            </td>
-            <td>Aisyah Permata, M.Psi</td>
-            <td>Psikolog Klinis</td>
-            <td>Depresi, Stres, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self-esteem.</td>
-            <td class="text-center">
-              <div class="d-flex justify-content-between">
-                <button class="btn btn-primary btn-sm">Edit</button>
-                <button class="btn btn-danger btn-sm">Hapus</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-center">
-              <img src="https://via.placeholder.com/120" alt="Profil" class="profile-img">
-            </td>
-            <td>Putra Aliando, M.Psi</td>
-            <td>Psikolog Klinis</td>
-            <td>Depresi, Stres, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self-esteem.</td>
-            <td class="text-center">
-              <div class="d-flex justify-content-between">
-                <button class="btn btn-primary btn-sm">Edit</button>
-                <button class="btn btn-danger btn-sm">Hapus</button>
-              </div>
-            </td>
-          </tr>
+                  <?php
+                        $sql = "SELECT * FROM psychologists ORDER BY id DESC";
+                        $result = $db->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            $no = 1;
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $no++ . "</td>";
+                                echo "<td><img src='" . $row['foto'] . "' alt='Foto Psikolog' width='50'></td>";
+                                echo "<td>" . $row['nama'] . "</td>";
+                                echo "<td>" . $row['spesialisasi'] . "</td>";
+                                echo "<td>" . $row['deskripsi'] . "</td>";
+                                echo "<td>
+                                    <a href='?edit=" . $row['id'] . "' class='btn btn-primary btn-sm'>Edit</a>
+                                    <a href='?delete=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>
+                                  </td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='8' class='text-center'>Tidak ada data psikolog.</td></tr>";
+                        }
+                    ?>
         </tbody>
       </table>
     </div>
