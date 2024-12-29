@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2024 at 09:37 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 30 Des 2024 pada 00.24
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `booking`
+-- Struktur dari tabel `artikel`
+--
+
+CREATE TABLE `artikel` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(255) DEFAULT NULL,
+  `gambar` varchar(255) DEFAULT NULL,
+  `url` varchar(255) NOT NULL,
+  `kategori` enum('Baca Informasi','Tonton Video') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `judul`, `gambar`, `url`, `kategori`) VALUES
+(1, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia\r\n                                 ', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia\'', 'Baca Informasi'),
+(2, '11 Kiat Berkomunikasi dengan Remaja', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja\'', 'Baca Informasi'),
+(3, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\r\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2\'', 'Baca Informasi'),
+(4, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja\'', 'Baca Informasi'),
+(51, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
+(52, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
+(53, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
+(54, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `booking`
 --
 
 CREATE TABLE `booking` (
@@ -44,7 +72,7 @@ CREATE TABLE `booking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `booking`
+-- Dumping data untuk tabel `booking`
 --
 
 INSERT INTO `booking` (`booking_id`, `nama`, `tanggalLahir`, `umur`, `jenisKelamin`, `pendidikan`, `alamat`, `tanggalKonsultasi`, `waktuKonsultasi`, `psikolog`, `spesialisasi`, `harga`, `user_id`) VALUES
@@ -80,7 +108,7 @@ INSERT INTO `booking` (`booking_id`, `nama`, `tanggalLahir`, `umur`, `jenisKelam
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -103,7 +131,7 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pembayaran`
+-- Dumping data untuk tabel `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`id_transaksi`, `username`, `nama`, `tanggal_lahir`, `umur`, `jenis_kelamin`, `pendidikan`, `alamat`, `tanggal_konsultasi`, `waktu_konsultasi`, `psikolog`, `harga`, `metode_pembayaran`, `created_at`, `booking_id`, `status`) VALUES
@@ -121,7 +149,7 @@ INSERT INTO `pembayaran` (`id_transaksi`, `username`, `nama`, `tanggal_lahir`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `psychologists`
+-- Struktur dari tabel `psychologists`
 --
 
 CREATE TABLE `psychologists` (
@@ -134,7 +162,7 @@ CREATE TABLE `psychologists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `psychologists`
+-- Dumping data untuk tabel `psychologists`
 --
 
 INSERT INTO `psychologists` (`id`, `nama`, `spesialisasi`, `deskripsi`, `harga`, `foto`) VALUES
@@ -153,7 +181,7 @@ INSERT INTO `psychologists` (`id`, `nama`, `spesialisasi`, `deskripsi`, `harga`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -173,7 +201,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `name`, `contact`, `image`, `data_kelahiran`, `umur`, `jenis_kelamin`, `pendidikan_karir`, `alamat`, `role`) VALUES
@@ -188,7 +216,13 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `name`, `contac
 --
 
 --
--- Indexes for table `booking`
+-- Indeks untuk tabel `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `booking`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
@@ -196,47 +230,53 @@ ALTER TABLE `booking`
   ADD KEY `fk_user_id` (`user_id`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_transaksi`),
   ADD KEY `fk_booking_id` (`booking_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `booking`
+-- AUTO_INCREMENT untuk tabel `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT untuk tabel `booking`
 --
 ALTER TABLE `booking`
   MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `booking`
+-- Ketidakleluasaan untuk tabel `booking`
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `pembayaran`
+-- Ketidakleluasaan untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `fk_booking_id` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`booking_id`);
