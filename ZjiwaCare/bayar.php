@@ -29,17 +29,19 @@ if (isset($_POST["submit"])) {
             $psikolog = $_SESSION['selected_psikolog'];
             $harga = $_SESSION['selected_harga'];
             $metode_pembayaran = $_POST['paymentMethod'];
+            $status = $_POST['submit'];
+            $_SESSION['status']= $status;
 
             $query = "INSERT INTO pembayaran (
                 id_transaksi, username, nama, tanggal_lahir, umur, 
                 jenis_kelamin, pendidikan, alamat, 
                 tanggal_konsultasi, waktu_konsultasi, 
-                psikolog, harga, metode_pembayaran, booking_id
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                psikolog, harga, metode_pembayaran, booking_id, status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             if ($stmt = $db->prepare($query)) {
                 $stmt->bind_param(
-                    "ssssissssssssi",
+                    "ssssissssssssis",
                     $id_transaksi,
                     $username,
                     $nama,
@@ -53,7 +55,8 @@ if (isset($_POST["submit"])) {
                     $psikolog,
                     $harga,
                     $metode_pembayaran,
-                    $booking_id
+                    $booking_id,
+                    $status
                 );
 
                 if ($stmt->execute()) {
@@ -239,8 +242,8 @@ if (isset($_POST["submit"])) {
                             <h5>Informasi Virtual Account</h5>
                             <p>Nomor VA: 1234567890</p>
                             <p>Jumlah Pembayaran: Rp 100.000</p>
-                            <button name="submit" class="btn btn-success" id="successButton">Berhasil</button>
-                            <button class="btn btn-danger" id="failButton">Gagal</button>
+                            <button name="submit" class="btn btn-success" id="successButton" value="berhasil">Berhasil</button>
+                            <button name="submit"class="btn btn-danger" id="failButton" value="gagal">Gagal</button>
                         </div>
                     </form>
                 </div>

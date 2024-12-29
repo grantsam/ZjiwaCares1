@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.update-profile {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-profile img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.update-profile .message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.update_dashboard-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+form table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+table tr td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+span {
+    font-weight: bold;
+    color: #333;
+}
+
+input.box {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    margin: 5px 0;
+}
+
+input.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input.btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: #bd2130;
+}

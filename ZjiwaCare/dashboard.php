@@ -18,10 +18,7 @@ if(isset($_POST['logout'])){
 </head>
 <body>
     <h1>dashboard</h1>
-    <h3>Selamat datang <?= $_SESSION["username"] ?></h3>
-    <form action="dashboard.php" method="POST">
-        <button type= "submit" name= "logout">Log out</button>
-    </form>
+    <h3 class="welcome">Selamat datang <?= $_SESSION["username"] ?></h3>
 
     <div class="profile">
     <?php
@@ -39,6 +36,7 @@ if(isset($_POST['logout'])){
             $_SESSION["jenis_kelamin"] = $data["jenis_kelamin"];
             $_SESSION["pendidikan_karir"] = $data["pendidikan_karir"];
             $_SESSION["alamat"] = $data["alamat"];
+            $_SESSION["role"] = $data['role'];
         } else {
             echo "No user found.";
         }
@@ -58,9 +56,16 @@ if(isset($_POST['logout'])){
     <h3> jenis kelamin :<?= $_SESSION['jenis_kelamin'] ?> </h3>
     <h3> pendidikan / karir :<?= $_SESSION['pendidikan_karir'] ?> </h3>
     <h3> alamat :<?= $_SESSION['alamat'] ?> </h3>
+    <h3> role :<?= $_SESSION['role'] ?> </h3>
+    
+    <div class="d-flex gap-2">
 
-    <a href="update_dashboard.php" class="btn">Update Profile</a>
-
+        <a href="update_dashboard.php" class="btn">Update Profile</a>
+        <a href="home.html" class="btn">home</a>
+    </div>
+    <form action="dashboard.php" method="POST">
+        <button type= "submit" name= "logout">Log out</button>
+    </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

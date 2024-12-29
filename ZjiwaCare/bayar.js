@@ -47,11 +47,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Initialize fail button handler
-    const failButton = document.getElementById('failButton');
-    if (failButton) {
-        failButton.addEventListener('click', function () {
-            alert('Pembayaran gagal. Silakan coba lagi.');
-        });
-    }
 });

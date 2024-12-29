@@ -32,6 +32,7 @@ if(isset($_POST["login"])) {
         $_SESSION["jenis_kelamin"] = $data['jenis_kelamin'];
         $_SESSION["pendidikan_karir"] = $data['pendidikan_karir'];
         $_SESSION["alamat"] = $data['alamat'];
+        $_SESSION["role"] = $data['role'];
 
         header("location: login.php");
     }
@@ -153,7 +154,7 @@ if(isset($_POST["login"])) {
             <button type="submit" class="button" name="login">Daftar</button>
         </form>
         <div class="signup-text">
-        Belum punya akun? <a href="SignUp.html">Sign Up</a>
+        Belum punya akun? <a href="SignUp.php">Sign Up</a>
         </div>
         <div class="message" id="loginMessage"></div>
         <h3><?= $login_message ?><h3>

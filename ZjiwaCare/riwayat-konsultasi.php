@@ -23,18 +23,24 @@ try {
         SELECT 
             booking.psikolog, 
             booking.spesialisasi, 
-            (booking.tanggalKonsultasi) AS tanggalKonsultasi, 
-            (booking.waktuKonsultasi) AS waktuKonsultasi, 
+            booking.tanggalKonsultasi AS tanggalKonsultasi, 
+            booking.waktuKonsultasi AS waktuKonsultasi, 
             booking.harga, 
-            pembayaran.id_transaksi 
+            pembayaran.id_transaksi,
+            psychologists.foto AS foto
         FROM 
-            booking 
+            booking
         LEFT JOIN 
             pembayaran 
         ON 
             booking.booking_id = pembayaran.booking_id
+        LEFT JOIN 
+            psychologists
+        ON 
+            booking.psikolog = psychologists.nama
         WHERE 
             booking.user_id = ?
+
     ");
     if ($stmt) {
         $stmt->bind_param("i", $user_id); // Bind parameter
@@ -94,7 +100,7 @@ try {
                         <a class="nav-link box-nav" href="komunitas2.php">Komunitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav active" href="riwayat.php">Riwayat</a>
+                        <a class="nav-link box-nav active" href="riwayat.html">Riwayat</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-primary box-login" href="logout.php">Logout</a>
@@ -116,7 +122,7 @@ try {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="dokter1.png" alt="Doctor" class="img-fluid rounded-circle">
+                                <img src="<?= $booking['foto'] ?>" alt="Doctor" class="img-fluid rounded-circle">
                                 </div>
                                 <div class="col-md-10">
                                     <p class="text-muted mb-0">
@@ -126,7 +132,8 @@ try {
                                         <?= $booking['tanggalKonsultasi'] ?><br>
                                         <?= $booking['waktuKonsultasi'] ?><br>
                                         Rp <?= number_format($booking['harga'], 2, ',', '.') ?>
-                                        ID Transaksi: <?= $booking['id_transaksi'] ? $booking['id_transaksi'] : 'Belum ada transaksi' ?>
+                                        ID Transaksi:
+                                        <?= $booking['id_transaksi'] ? $booking['id_transaksi'] : 'Belum ada transaksi' ?>
                                     </p>
                                 </div>
                             </div>

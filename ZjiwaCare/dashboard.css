@@ -1,16 +1,77 @@
-.profile{
-    padding: 20px;
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    text-align: center;
-    width: 400px;
-    border-radius: 5px;
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
-.profile img{
-    height: 150px;
-    width: 150px;
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+h3 {
+    color: #555;
+    margin: 10px 0;
+}
+
+.profile {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile img {
+    display: block;
+    margin: 0 auto 20px;
     border-radius: 50%;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    margin-bottom: 5px;
+    border: 2px solid #ddd;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #218838;
 }

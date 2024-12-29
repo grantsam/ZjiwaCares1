@@ -83,7 +83,7 @@ if(isset($_POST["register"])) {
             <div class="checkbox-group">
                 <input type="checkbox" id="terms" required>
                 <label for="terms">Saya setuju dengan<a href="https://servicedesk.layanan.go.id/privasi" target="_blank"> syarat dan ketentuan.</a></label>
-                    <p>Sudah punya akun? <a href="login.html">Login</a></p>
+                    <p>Sudah punya akun? <a href="login.php">Login</a></p>
                 </div>
                 <div class="message" id="message">Pendaftaran berhasil!</div>
                 <button name="register" type="submit" class="button">Daftar</button>

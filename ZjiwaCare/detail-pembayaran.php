@@ -19,6 +19,8 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
     $username = $_SESSION["username"];
     $contact = $_SESSION["contact"];
     $harga = $_SESSION['selected_harga'];
+    $status= $_SESSION['status'];
+    
 
 
 
@@ -68,7 +70,7 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
                         <strong>Metode Pembayaran:</strong>
                         <span class="ms-2" id="paymentMethodDisplay"></span>
                     </p>
-                    <p class="mb-1"><strong>Status Pembayaran:</strong> Berhasil</p>
+                    <p class="mb-1"><strong>Status Pembayaran:</strong> <?php echo $status; ?></p>
                     <p class="mb-3 d-flex align-items-center">
                         <strong>ID Transaksi:</strong>
                         <span class="ms-2" id="transactionIdDisplay"></span>
@@ -88,7 +90,7 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
                     </div>
                     <div class="d-flex justify-content-between fw-bold">
                         <p>Total</p>
-                        <p>Rp 155.000</p>
+                        <p>Rp 105.000</p>
                     </div>
                 </div>
 
