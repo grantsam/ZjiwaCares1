@@ -49,7 +49,7 @@ if(isset($_POST["register"])) {
             <table style="margin: 0 auto; text-align: left;">
                 <tr>
                     <td>
-                        <label for="email">Email</label>
+                        <label for="email">Username</label>
                     </td>
                     <td>
                         <input name="username" type="text" id="email" required>
