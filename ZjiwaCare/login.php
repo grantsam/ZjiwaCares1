@@ -136,7 +136,7 @@ if(isset($_POST["login"])) {
                 <table style="margin: 0 auto; text-align: left;">
                     <tr>  
                         <td>
-                            <label for="email">Email</label>
+                            <label for="email">Username</label>
                         </td>
                         <td>
                             <input name="username" type="text" id="email" required>
@@ -151,7 +151,7 @@ if(isset($_POST["login"])) {
                         </td>
                     </tr>
                 </table>
-            <button type="submit" class="button" name="login">Daftar</button>
+            <button type="submit" class="button" name="login">Login</button>
         </form>
         <div class="signup-text">
         Belum punya akun? <a href="SignUp.php">Sign Up</a>
