@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Des 2024 pada 00.24
+-- Waktu pembuatan: 30 Des 2024 pada 06.54
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -40,14 +40,22 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `judul`, `gambar`, `url`, `kategori`) VALUES
-(1, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia\r\n                                 ', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia\'', 'Baca Informasi'),
-(2, '11 Kiat Berkomunikasi dengan Remaja', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja\'', 'Baca Informasi'),
-(3, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\r\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2\'', 'Baca Informasi'),
-(4, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja\'', 'Baca Informasi'),
-(51, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
-(52, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
-(53, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
-(54, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video');
+(1, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia', 'Baca Informasi'),
+(2, '11 Kiat Berkomunikasi dengan Remaja.', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja', 'Baca Informasi'),
+(3, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2', 'Baca Informasi'),
+(4, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja', 'Baca Informasi'),
+(5, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
+(6, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
+(7, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
+(8, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video'),
+(9, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia\r\n                                 ', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia', 'Baca Informasi'),
+(10, '11 Kiat Berkomunikasi dengan Remaja.', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja', 'Baca Informasi'),
+(11, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\r\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2', 'Baca Informasi'),
+(12, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja', 'Baca Informasi'),
+(13, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
+(14, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
+(15, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
+(16, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video');
 
 -- --------------------------------------------------------
 
@@ -166,8 +174,8 @@ CREATE TABLE `psychologists` (
 --
 
 INSERT INTO `psychologists` (`id`, `nama`, `spesialisasi`, `deskripsi`, `harga`, `foto`) VALUES
-(1, 'Alexa Hidayanti, M.Psi', 'Psikolog Klinis', 'Depresi', 100000, 'img/dokter1.png'),
-(2, 'Dr. Nova Kurniasari , M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis', 100000, 'img/dokter3.png'),
+(1, 'Alexa Hidayanti, M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter1.png'),
+(2, 'Dr. Nova Kurniasari , M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter3.png'),
 (3, 'Aisyahra Permata, M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter2.png'),
 (4, 'Putra Aliando, M.Psi', 'Psikolog Klinis', 'Hubungan Keluarga dan Romantis, Burnout, Gangguan Mood dan Kecemasan, serta Makna Hidup', 100000, 'img/dokter8.png'),
 (5, 'Bayu Hermawan, S.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem', 100000, 'img/dokter10.png'),
@@ -209,7 +217,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `name`, `contac
 (3, 'sasa', '123', '2024-11-24 14:08:58', 'sasa', 1234, '', '', 0, '', '', '', 'user'),
 (4, 'bubu@gmail.com', '123', '2024-11-24 14:18:31', 'bubu', 123456789, '', '', 0, '', '', '', 'user'),
 (6, 'grant           ', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', '2024-11-24 14:44:34', 'grant            ', 1234, '', '', 0, '', '', '', 'user'),
-(7, 'ggg      ', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', '2024-11-28 23:59:29', 'gg       ', 1234777, '', 'siantar, 01-januari-2004', 19, 'laki-laki', 'S1 Sistem informasi', 'jl.rt rw wwww', 'user');
+(7, 'ggg      ', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', '2024-11-28 23:59:29', 'gg       ', 1234777, '', 'siantar, 01-januari-2004', 19, 'laki-laki', 'S1 Sistem informasi', 'jl.rt rw wwww', 'user'),
+(8, 'via', '8d23cf6c86e834a7aa6eded54c26ce2bb2e74903538c61bdd5d2197997ab2f72', '2024-12-30 11:56:43', 'Oktavia', 32423, '', '', 0, '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -263,7 +272,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
