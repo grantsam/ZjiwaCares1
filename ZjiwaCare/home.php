@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'database.php';
+$is_admin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +16,7 @@
         #symptoms-section {
             padding: 50px 0;
         }
+
         .gejala-boxes {
             display: flex;
             flex-wrap: wrap;
@@ -18,6 +24,7 @@
             padding: 20px;
             margin-bottom: 20px;
         }
+
         .gejala-box {
             background-color: #ffece7;
             width: 12%;
@@ -27,6 +34,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
+
         .gejala-box img {
             width: 70%;
             height: auto;
@@ -42,7 +50,7 @@
             margin-top: 10px;
             line-height: 1.2;
         }
-       
+
         #find-psychologist-button {
             background-color: #00695c;
             color: white;
@@ -56,22 +64,24 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
+
         #find-psychologist-button:hover {
             background-color: #004d40;
         }
 
-        .tes-box h3 { 
+        .tes-box h3 {
             text-align: center;
             font-size: 18px;
             color: #d95d39;
             margin-bottom: 10px;
             line-height: 1.2;
         }
+
         .tes-box img {
-            width: 80px; 
+            width: 80px;
             height: 80px;
-            object-fit: contain; 
-            margin-bottom: 15px; 
+            object-fit: contain;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -90,7 +100,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link box-nav active" href="home.html">Home</a>
+                        <a class="nav-link box-nav active" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="layanan.html">Layanan</a>
@@ -104,9 +114,11 @@
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="riwayat.html">Riwayat</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link box-nav" href="admin.php">Dashboard</a>
-                    </li>
+                    <?php if ($is_admin): ?>
+                        <li class="nav-item">
+                            <a class="nav-link box-nav" href="admin.php">Dashboard</a>
+                        </li>
+                    <?php endif; ?>
                     <li class="nav-item">
                         <a class="btn btn-primary box-login" href="login.php">Login</a>
                     </li>
@@ -122,7 +134,7 @@
                 <div class="welcome-text">
                     <h1>Selamat Datang Gen Z</h1>
                     <p>Kami hadir untuk membantumu</p>
-                    <button id="btn-appointment"  onclick="location.href='cari-psikolog.php';">Buat Janji</button>
+                    <button id="btn-appointment" onclick="location.href='cari-psikolog.php';">Buat Janji</button>
                 </div>
                 <div class="welcome-image">
                     <img src="2.png" alt="Ilustrasi Selamat Datang">
@@ -139,33 +151,43 @@
                     <h2>Cari Tahu Gejalamu</h2>
                     <p>Telusuri informasi yang tersedia untuk mengetahui gejalamu</p>
                     <div class="gejala-boxes">
-                    <div class="gejala-box" onclick="showGejala('depresi')">
-                        <img src="img/depresi1.png"><p>Depresi</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('stres')">
-                        <img src="img/stress1.png"><p>Stres</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('kecemasan')">
-                        <img src="img/cemas1.png"><p>Gangguan Kecemasan</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('mood')">
-                        <img src="img/mood1.png"><p>Gangguan Mood</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('trauma')">
-                        <img src="img/trauma1.png"><p>Trauma</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('kecanduan')">
-                        <img src="img/candu.png"><p>Kecanduan</p>
-                    </div>
-                    <div class="gejala-box" onclick="showGejala('hubungan')">
-                        <img src="img/hubungan1.png"><p>Keluarga & Hubungan</p>
-                    </div>
+                        <div class="gejala-box" onclick="showGejala('depresi')">
+                            <img src="img/depresi1.png">
+                            <p>Depresi</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('stres')">
+                            <img src="img/stress1.png">
+                            <p>Stres</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('kecemasan')">
+                            <img src="img/cemas1.png">
+                            <p>Gangguan Kecemasan</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('mood')">
+                            <img src="img/mood1.png">
+                            <p>Gangguan Mood</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('trauma')">
+                            <img src="img/trauma1.png">
+                            <p>Trauma</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('kecanduan')">
+                            <img src="img/candu.png">
+                            <p>Kecanduan</p>
+                        </div>
+                        <div class="gejala-box" onclick="showGejala('hubungan')">
+                            <img src="img/hubungan1.png">
+                            <p>Keluarga & Hubungan</p>
+                        </div>
                     </div>
 
                     <div id="gejala-description">
-                    <p style="font-size: 13px; color: #333; text-align: justify; margin: 20px 0;">
-                    Depresi adalah gangguan kesehatan mental yang umum dan serius yang ditandai dengan suasana hati yang rendah, kehilangan minat atau kesenangan, dan berbagai gejala fisik dan mental lainnya. Meskipun kesedihan adalah emosi yang normal, depresi berbeda karena intensitas dan durasinya yang lebih besar, serta dampaknya yang signifikan pada kehidupan sehari-hari.
-                    </p>
+                        <p style="font-size: 13px; color: #333; text-align: justify; margin: 20px 0;">
+                            Depresi adalah gangguan kesehatan mental yang umum dan serius yang ditandai dengan suasana
+                            hati yang rendah, kehilangan minat atau kesenangan, dan berbagai gejala fisik dan mental
+                            lainnya. Meskipun kesedihan adalah emosi yang normal, depresi berbeda karena intensitas dan
+                            durasinya yang lebih besar, serta dampaknya yang signifikan pada kehidupan sehari-hari.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -247,33 +269,33 @@
             <button class="lihat-semua" onclick="location.href='informasi2.php';">Lihat Semua</button>
         </section>
     </main>
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="ZjiwaCare.png" alt="ZjiwaCare Logo">
-                    <p>PT. Zjiwa Care Nusantara</p>
-                    <p>Jl. Keitintang Baru No. 100, Surabaya, Jawa Timur</p>
-                    <p>zjiwacare01@gmail.com / +62 - 812-3456-7890</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Layanan Konsumen</h4>
-                    <p><a href="#">FAQ</a></p>
-                    <p><a href="#">Hubungi Kami</a></p>
-                </div>
-                <div class="footer-apps">
-                    <h4>Download App</h4>
-                    <a href="#"><img src="playstore.png" alt="Google Play"></a>
-                    <a href="#"><img src="appstore.png" alt="App Store"></a>
-                </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ZjiwaCare.png" alt="ZjiwaCare Logo">
+                <p>PT. Zjiwa Care Nusantara</p>
+                <p>Jl. Keitintang Baru No. 100, Surabaya, Jawa Timur</p>
+                <p>zjiwacare01@gmail.com / +62 - 812-3456-7890</p>
             </div>
-
-            <div class="footer-bottom">
-                <p>COPYRIGHT 2024 - ZJIWACARE</p>
+            <div class="footer-links">
+                <h4>Layanan Konsumen</h4>
+                <p><a href="#">FAQ</a></p>
+                <p><a href="#">Hubungi Kami</a></p>
             </div>
+            <div class="footer-apps">
+                <h4>Download App</h4>
+                <a href="#"><img src="playstore.png" alt="Google Play"></a>
+                <a href="#"><img src="appstore.png" alt="App Store"></a>
+            </div>
+        </div>
 
-        </footer>
-        
+        <div class="footer-bottom">
+            <p>COPYRIGHT 2024 - ZJIWACARE</p>
+        </div>
+
+    </footer>
+
     <script src="home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

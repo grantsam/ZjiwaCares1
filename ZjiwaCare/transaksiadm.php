@@ -123,7 +123,7 @@ $result = $db->query($query);
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">
+                    <a class="nav-link" href="home.php">
                         <i class="bi bi-speedometer2"></i>
                         Home
                     </a>
@@ -147,9 +147,9 @@ $result = $db->query($query);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="usersadm.php">
                         <i class="bi bi-gear"></i>
-                        Pengaturan
+                        users
                     </a>
                 </li>
             </ul>

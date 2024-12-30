@@ -173,13 +173,13 @@ if (isset($_GET['edit_id'])) {
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">
+                    <a class="nav-link" href="home.php">
                         <i class="bi bi-speedometer2"></i>
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="psikologadm.php">
+                    <a class="nav-link active" href="admin.php">
                         <i class="bi bi-people"></i>
                         Psikolog
                     </a>
@@ -187,7 +187,7 @@ if (isset($_GET['edit_id'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="transaksiadm.php">
                         <i class="bi bi-calendar-check"></i>
-                        transaksi
+                        Transaksi
                     </a>
                 </li>
                 <li class="nav-item">
@@ -197,9 +197,9 @@ if (isset($_GET['edit_id'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="usersadm.php">
                         <i class="bi bi-gear"></i>
-                        Pengaturan
+                        users
                     </a>
                 </li>
             </ul>
