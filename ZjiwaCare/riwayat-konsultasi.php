@@ -88,16 +88,16 @@ try {
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="home.php">Home</a>
+                        <a class="nav-link box-nav" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="layanan.php">Layanan</a>
+                        <a class="nav-link box-nav" href="layanan.html">Layanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="informasi2.php">Informasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="komunitas2.php">Komunitas</a>
+                        <a class="nav-link box-nav" href="komunitas2.html">Komunitas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav active" href="riwayat.html">Riwayat</a>
