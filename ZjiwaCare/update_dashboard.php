@@ -184,12 +184,12 @@ if(isset($_POST['update_profile'])){
                         <!--TABEL UNDERLINE!-->
                         <tr>
                             <td>
-                                <input type="submit" value="update profile" name="update_profile" class="btn">
+                                <input type="submit" value="update profile" name="update_profile" class="btn" style="background-color: #00695C; color: white;">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="dashboard.php" class="delete-btn">go back</a>
+                                <a href="dashboard.php" class="delete-btn" style="background-color: #00695C; color: white;">go back</a>
                             </td>
                         </tr>
                     </table>
