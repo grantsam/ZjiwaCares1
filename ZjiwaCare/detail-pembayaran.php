@@ -2,10 +2,12 @@
 include 'database.php';
 session_start();
 
+
 // Cek apakah session data ada
-if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESSION['umur']) && isset($_SESSION['jenisKelamin']) &&
-    isset($_SESSION['pendidikan']) && isset($_SESSION['alamat']) && isset($_SESSION['tanggalKonsultasi']) && isset($_SESSION['waktuKonsultasi'])) 
-{
+if (
+    isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESSION['umur']) && isset($_SESSION['jenisKelamin']) &&
+    isset($_SESSION['pendidikan']) && isset($_SESSION['alamat']) && isset($_SESSION['tanggalKonsultasi']) && isset($_SESSION['waktuKonsultasi'])
+) {
 
     // Ambil data dari session
     $nama = $_SESSION['nama'];
@@ -19,8 +21,9 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
     $username = $_SESSION["username"];
     $contact = $_SESSION["contact"];
     $harga = $_SESSION['selected_harga'];
-    $status= $_SESSION['status'];
-    
+    $status = $_SESSION['status'];
+    $metode_pembayaran = $_SESSION['metode_pembayaran'];
+
 
 
 
@@ -68,7 +71,15 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
                     <h5 class="fw-bold">Informasi Pembayaran</h5>
                     <p class="mb-1">
                         <strong>Metode Pembayaran:</strong>
-                        <span class="ms-2" id="paymentMethodDisplay"></span>
+                        <span class="ms-2" id="paymentMethodDisplay">
+                            <?php
+                            if (isset($_SESSION['metode_pembayaran'])) {
+                                echo htmlspecialchars($_SESSION['metode_pembayaran']);
+                            } else {
+                                echo "Belum dipilih";
+                            }
+                            ?>
+                        </span>
                     </p>
                     <p class="mb-1"><strong>Status Pembayaran:</strong> <?php echo $status; ?></p>
                     <p class="mb-3 d-flex align-items-center">
@@ -96,7 +107,7 @@ if (isset($_SESSION['nama']) && isset($_SESSION['tanggalLahir']) && isset($_SESS
 
                 <!-- Tombol Kembali -->
                 <div class="text-center mt-4">
-                    <a href="https://example.com" class="btn btn-primary">Kembali ke Beranda</a>
+                    <a href="home.php" class="btn btn-primary">Kembali ke Beranda</a>
                 </div>
             </div>
         </div>

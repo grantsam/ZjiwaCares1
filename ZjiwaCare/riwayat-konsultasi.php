@@ -27,6 +27,7 @@ try {
             booking.waktuKonsultasi AS waktuKonsultasi, 
             booking.harga, 
             pembayaran.id_transaksi,
+            pembayaran.status,
             psychologists.foto AS foto
         FROM 
             booking
@@ -88,7 +89,7 @@ try {
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="home.html">Home</a>
+                        <a class="nav-link box-nav" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="layanan.html">Layanan</a>
@@ -103,7 +104,7 @@ try {
                         <a class="nav-link box-nav active" href="riwayat.html">Riwayat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary box-login" href="logout.php">Logout</a>
+                        <a class="btn btn-primary box-login" href="login.php">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -134,6 +135,7 @@ try {
                                         Rp <?= number_format($booking['harga'], 2, ',', '.') ?>
                                         ID Transaksi:
                                         <?= $booking['id_transaksi'] ? $booking['id_transaksi'] : 'Belum ada transaksi' ?>
+                                        <?= $booking['status'] ? $booking['status'] : 'belum ada transaksi' ?>
                                     </p>
                                 </div>
                             </div>

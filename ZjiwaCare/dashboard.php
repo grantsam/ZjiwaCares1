@@ -5,7 +5,7 @@ $user_id = $_SESSION['user_id'];
 if(isset($_POST['logout'])){
     session_unset();
     session_destroy();
-    header('location: home.html');
+    header('location: home.php');
 }
 ?>
 <!DOCTYPE html>

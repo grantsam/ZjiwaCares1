@@ -32,6 +32,8 @@ if (isset($_POST["submit"])) {
             $status = $_POST['submit'];
             $_SESSION['status']= $status;
 
+            $_SESSION['metode_pembayaran'] = $metode_pembayaran;
+
             $query = "INSERT INTO pembayaran (
                 id_transaksi, username, nama, tanggal_lahir, umur, 
                 jenis_kelamin, pendidikan, alamat, 
@@ -182,54 +184,7 @@ if (isset($_POST["submit"])) {
 
                         </div>
                         <input type="hidden" name="id_transaksi" id="transactionIdInput">
-                        <div>
-                            <h5 class="fw-bold mt-4">Kartu Debit/Kredit</h5>
-                            <div class="form-check border p-3 rounded mb-2">
-                                <input class="form-check-input" type="radio" name="creditcard" id="creditCard"
-                                    data-bs-toggle="collapse" data-bs-target="#creditCardForm" aria-expanded="false"
-                                    aria-controls="creditCardForm">
-                                <label class="form-check-label d-flex align-items-center" for="creditCard">
-                                    <span class="fw-bold">+ Tambahkan Kartu Debit/Kredit</span>
-                                </label>
-                            </div>
-
-                            <!-- Form Collapse -->
-                            <div class="collapse" id="creditCardForm">
-                                <div class="form-collapse">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Nama di Kartu</label>
-                                        <input type="text" class="form-control" id="cardname" name="card_name required"
-                                            placeholder="Masukkan nama sesuai kartu">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="cardNumber" class="form-label">Nomor Kartu</label>
-                                        <input type="text" class="form-control" id="cardNumber" name="card_number"
-                                            placeholder="Masukkan nomor kartu" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="expiryDate" class="form-label">Tanggal Kedaluwarsa (BB/TT) </label>
-                                        <input type="month" class="form-control" id="expiryDate" name="card_date"
-                                            required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="cvv" class="form-label">CVV</label>
-                                        <input type="password" class="form-control" id="cvv" placeholder="Masukkan CVV"
-                                            name="card_cvv" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="cvv" class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" id="alamat" name="card_address" required
-                                            placeholder="Masukkan Alamat Tagihan">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="cvv" class="form-label">Kode Pos</label>
-                                        <input type="password" class="form-control" id="code_post" name="card_pos"
-                                            required placeholder="Masukkan Kode Pos">
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <!-- Add a hidden input for the selected payment method -->
                         <input type="hidden" name="selectedPaymentMethod" id="selectedPaymentMethod">   
