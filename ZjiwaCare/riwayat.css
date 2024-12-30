@@ -1,3 +1,18 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -6,27 +21,6 @@ h1 {
     color: #8b2e2e;
 }
 
-footer {
-    background-color: #f8f9fa;
-}
-
-footer h6 {
-    color: #8b2e2e;
-}
-
-footer p {
-    font-size: 14px;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-footer a {
-    text-decoration: none;
-    color: #8b2e2e;
-}
 
 .btn-success {
     background-color: #13795d;
@@ -76,15 +70,50 @@ footer a {
     border-color: #13795d; /* Keep border color */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+
+/* Footer */
+footer {
+    background-color: #f8ebe3;
+    padding: 50px 0;
+    text-align: center;
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out; /* Durasi 1 detik untuk fade-in */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo p,
+.footer-links p,
+.footer-apps p {
+    color: #0f4c81;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #0f4c81;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-apps img {
+    width: 120px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    color: #d95d39;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
