@@ -88,11 +88,11 @@ if(isset($_POST['logout'])){
                             </tr>
                         </table>
                         <div class="d-flex justify-content-between mt-4">
-                            <a href="update_dashboard.php" class="btn" style="background-color: #19807F; color: white;">Update Profile</a>
-                            <a href="home.html" class="btn" style="background-color: #19807F; color: white;">Home</a>
+                            <a href="update_dashboard.php" class="btn" style="background-color: #00695C; color: white;">Update Profile</a>
+                            <a href="home.html" class="btn" style="background-color: #00695C; color: white;">Home</a>
                         </div>
                         <form action="dashboard.php" method="POST" class="mt-3">
-                            <button type="submit" name="logout" class="btn w-100" style="background-color: #19807F; color: white;">Log Out</button>
+                            <button type="submit" name="logout" class="btn w-100" style="background-color: #00695C; color: white;">Log Out</button>
                         </form>
                     </div>
                 </div>
