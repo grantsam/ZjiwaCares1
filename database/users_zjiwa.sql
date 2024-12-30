@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Des 2024 pada 06.07
+-- Waktu pembuatan: 30 Des 2024 pada 06.54
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -40,14 +40,22 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `judul`, `gambar`, `url`, `kategori`) VALUES
-(1, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia\r\n                                 ', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia', 'Baca Informasi'),
-(2, '11 Kiat Berkomunikasi dengan Remaja', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja', 'Baca Informasi'),
-(3, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\r\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2', 'Baca Informasi'),
+(1, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia', 'Baca Informasi'),
+(2, '11 Kiat Berkomunikasi dengan Remaja.', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja', 'Baca Informasi'),
+(3, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2', 'Baca Informasi'),
 (4, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja', 'Baca Informasi'),
 (5, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
 (6, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
 (7, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
-(8, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video');
+(8, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video'),
+(9, '10 Cara Menjaga Kesehatan Mental di Hari Kesehatan Mental Sedunia\r\n                                 ', 'img/artikel1.png', 'https://katadata.co.id/lifestyle/varia/6524ecbc4357e/10-cara-menjaga-kesehatan-mental-di-hari-kesehatan-mental-sedunia', 'Baca Informasi'),
+(10, '11 Kiat Berkomunikasi dengan Remaja.', 'img/artikel2.png', 'https://www.unicef.org/indonesia/id/kesehatan-mental/artikel/tips-berkomunikasi-dengan-remaja', 'Baca Informasi'),
+(11, 'Hari Kesehatan Mental Sedunia: Kapan Kita Harus ke Psikolog, Ya?\r\n                                    ', 'img/artikel3.jpg', 'https://kumparan.com/kumparanwoman/hari-kesehatan-mental-sedunia-kapan-kita-harus-ke-psikolog-ya-21MHGIRGj9e/2', 'Baca Informasi'),
+(12, 'Mengenal Pentingnya Kesehatan Mental pada Remaja', 'img/artikel4.png', 'https://yankes.kemkes.go.id/view_artikel/362/mengenal-pentingnya-kesehatan-mental-pada-remaja', 'Baca Informasi'),
+(13, 'Kenapa Generasi sekarang gampang Kena Gangguan Mental?', 'img/video1.png', 'https://youtu.be/6Buxdq4UioY?si=hjse2cAzUDq_W88n', 'Tonton Video'),
+(14, 'Sehatkah Jiwaku?', 'img/video2.png', 'https://youtu.be/93yfxrwqGWw?si=03FvsCAceIAPhdag', 'Tonton Video'),
+(15, 'Apa itu Gangguan Kecemasan?', 'img/video3.png', 'https://youtu.be/PaiBtUZ0C3Y?si=J-FNuF4LI0nO2KaL', 'Tonton Video'),
+(16, 'Ketahui Ciri- Ciri BurnOut dan Cara mengatasinya', 'img/video4.png', 'https://youtu.be/PzltrPk0c0s?si=AwNbRrTp1L4eEY4e', 'Tonton Video');
 
 -- --------------------------------------------------------
 
