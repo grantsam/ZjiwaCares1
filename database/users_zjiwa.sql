@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Des 2024 pada 05.41
+-- Waktu pembuatan: 30 Des 2024 pada 06.07
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -166,8 +166,8 @@ CREATE TABLE `psychologists` (
 --
 
 INSERT INTO `psychologists` (`id`, `nama`, `spesialisasi`, `deskripsi`, `harga`, `foto`) VALUES
-(1, 'Alexa Hidayanti, M.Psi', 'Psikolog Klinis', 'Depresi', 100000, 'img/dokter1.png'),
-(2, 'Dr. Nova Kurniasari , M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis', 100000, 'img/dokter3.png'),
+(1, 'Alexa Hidayanti, M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter1.png'),
+(2, 'Dr. Nova Kurniasari , M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter3.png'),
 (3, 'Aisyahra Permata, M.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem.', 100000, 'img/dokter2.png'),
 (4, 'Putra Aliando, M.Psi', 'Psikolog Klinis', 'Hubungan Keluarga dan Romantis, Burnout, Gangguan Mood dan Kecemasan, serta Makna Hidup', 100000, 'img/dokter8.png'),
 (5, 'Bayu Hermawan, S.Psi', 'Psikolog Klinis', 'Depresi, Stress, Hubungan Romantis, Pengembangan Diri, Kesulitan Beradaptasi, Self esteem', 100000, 'img/dokter10.png'),
@@ -209,7 +209,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `name`, `contac
 (3, 'sasa', '123', '2024-11-24 14:08:58', 'sasa', 1234, '', '', 0, '', '', '', 'user'),
 (4, 'bubu@gmail.com', '123', '2024-11-24 14:18:31', 'bubu', 123456789, '', '', 0, '', '', '', 'user'),
 (6, 'grant           ', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', '2024-11-24 14:44:34', 'grant            ', 1234, '', '', 0, '', '', '', 'user'),
-(7, 'ggg      ', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', '2024-11-28 23:59:29', 'gg       ', 1234777, '', 'siantar, 01-januari-2004', 19, 'laki-laki', 'S1 Sistem informasi', 'jl.rt rw wwww', 'user');
+(7, 'ggg      ', '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b', '2024-11-28 23:59:29', 'gg       ', 1234777, '', 'siantar, 01-januari-2004', 19, 'laki-laki', 'S1 Sistem informasi', 'jl.rt rw wwww', 'user'),
+(8, 'via', '8d23cf6c86e834a7aa6eded54c26ce2bb2e74903538c61bdd5d2197997ab2f72', '2024-12-30 11:56:43', 'Oktavia', 32423, '', '', 0, '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -263,7 +264,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
