@@ -142,16 +142,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="nav-link box-nav" href="layanan.html">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="informasi.html">Informasi</a>
+                        <a class="nav-link box-nav" href="informasi2.php">Informasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav" href="komunitas.html">Komunitas</a>
+                        <a class="nav-link box-nav" href="komunitas2.html">Komunitas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav active" href="riwayat.html">Riwayat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary box-login" href="login.html">Login</a>
+                        <a class="btn btn-primary box-login" href="login.php">Login</a>
                     </li>
                 </ul>
             </div>
