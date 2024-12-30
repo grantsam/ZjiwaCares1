@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link box-nav active" href="home.html">Home</a>
+                        <a class="nav-link box-nav active" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="layanan.html">Layanan</a>
