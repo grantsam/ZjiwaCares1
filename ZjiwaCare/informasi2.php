@@ -29,7 +29,7 @@
                         <a class="nav-link box-nav" href="layanan.html">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box-nav active" href="informasi2.html">Informasi</a>
+                        <a class="nav-link box-nav active" href="informasi2.php">Informasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link box-nav" href="komunitas2.html">Komunitas</a>
