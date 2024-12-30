@@ -8,66 +8,97 @@ if(isset($_POST['logout'])){
     header('location: home.html');
 }
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
-<body>
-    <h1>dashboard</h1>
-    <h3 class="welcome">Selamat datang <?= $_SESSION["username"] ?></h3>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg" >
+                    <div class="card-header" style="background-color: #FCF4EC; color: #333;">
+                        <h1 class="text-center">Dashboard</h1>
+                        <h3 class="text-center">Selamat Datang, <?= htmlspecialchars($_SESSION['username']) ?></h3>
+                    </div>
+                    <div class="card-body">
 
-    <div class="profile">
-    <?php
-        $sql = "SELECT * FROM users WHERE id = '$user_id'";
-        $result = $db->query($sql);
+                        <?php
+                        $sql = "SELECT * FROM users WHERE id = '$user_id'";
+                        $result = $db->query($sql);
 
-        if($result->num_rows>0) {
-            $data = $result->fetch_assoc();
-            // Perbarui session dengan data terbaru 
-            $_SESSION["name"] = $data["name"];
-            $_SESSION["username"] = $data["username"];
-            $_SESSION["contact"] = $data["contact"];
-            $_SESSION["data_kelahiran"] = $data["data_kelahiran"];
-            $_SESSION["umur"] = $data["umur"];
-            $_SESSION["jenis_kelamin"] = $data["jenis_kelamin"];
-            $_SESSION["pendidikan_karir"] = $data["pendidikan_karir"];
-            $_SESSION["alamat"] = $data["alamat"];
-            $_SESSION["role"] = $data['role'];
-        } else {
-            echo "No user found.";
-        }
-        if($data['image'] == ''){
-            echo '<img src="1.png">';   
-        }
-        else{
-            echo '<img src = "'.$data['image'].'">';
-        }
+                        if($result->num_rows > 0) {
+                            $data = $result->fetch_assoc();
+                            // Perbarui session dengan data terbaru
+                            $_SESSION = array_merge($_SESSION, $data);
+                        } else {
+                            echo "<div class='alert alert-danger'>No user found.</div>";
+                        }
+                        ?>
 
-    ?>
-    <h3> username :<?= $_SESSION['username'] ?> </h3>
-    <h3> name :<?= $_SESSION['name'] ?> </h3>
-    <h3> contact :<?= $_SESSION['contact'] ?> </h3>
-    <h3> tempat, tanggal lahir :<?= $_SESSION["data_kelahiran"] ?> </h3>
-    <h3> umur :<?= $_SESSION['umur'] ?> </h3>
-    <h3> jenis kelamin :<?= $_SESSION['jenis_kelamin'] ?> </h3>
-    <h3> pendidikan / karir :<?= $_SESSION['pendidikan_karir'] ?> </h3>
-    <h3> alamat :<?= $_SESSION['alamat'] ?> </h3>
-    <h3> role :<?= $_SESSION['role'] ?> </h3>
-    
-    <div class="d-flex gap-2">
-
-        <a href="update_dashboard.php" class="btn">Update Profile</a>
-        <a href="home.html" class="btn">home</a>
+                        <div class="text-center mb-3">
+                            <?php if (empty($data['image'])): ?>
+                                <img src="1.png" class="rounded-circle" alt="Default Profile" width="150">
+                            <?php else: ?>
+                                <img src="<?= htmlspecialchars($data['image']) ?>" class="rounded-circle" alt="Profile Image" width="150">
+                            <?php endif; ?>
+                        </div>
+                        
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 30%; padding-left: 20px;">Username</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['username']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Name</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['name']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Contact</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['contact']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Tempat, Tanggal Lahir</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['data_kelahiran']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Umur</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['umur']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Jenis Kelamin</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['jenis_kelamin']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Pendidikan / Karir</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['pendidikan_karir']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Alamat</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['alamat']) ?></td>
+                            </tr>
+                            <tr>
+                                <th style="padding-left: 20px;">Role</th>
+                                <td style="padding-left: 20px;"><?= htmlspecialchars($_SESSION['role']) ?></td>
+                            </tr>
+                        </table>
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="update_dashboard.php" class="btn" style="background-color: #19807F; color: white;">Update Profile</a>
+                            <a href="home.html" class="btn" style="background-color: #19807F; color: white;">Home</a>
+                        </div>
+                        <form action="dashboard.php" method="POST" class="mt-3">
+                            <button type="submit" name="logout" class="btn w-100" style="background-color: #19807F; color: white;">Log Out</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <form action="dashboard.php" method="POST">
-        <button type= "submit" name= "logout">Log out</button>
-    </form>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
